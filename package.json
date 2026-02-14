@@ -1,0 +1,27 @@
+{
+  "name": "ev-tco-calculator-finland",
+  "version": "1.0.0",
+  "description": "TCO calculator comparing PHEV and EV vehicles for Finnish market",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/example-usage.ts",
+    "dev": "ts-node-dev --respawn src/example-usage.ts"
+  },
+  "keywords": [
+    "EV",
+    "PHEV",
+    "TCO",
+    "Finland",
+    "calculator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
