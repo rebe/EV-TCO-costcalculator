@@ -2,15 +2,15 @@ import { EVTCOCalculator, FinlandCosts, VehicleSpecs } from './tco-calculator';
 
 // Finnish market costs (2024 estimates)
 const finlandCosts: FinlandCosts = {
-  electricityPricePerKwh: 0.25, // EUR/kWh (including transfer fees)
+  electricityPricePerKwh: 0.11, // EUR/kWh (6c energy + 5c transfer in Tampere)
   gasolinePrice: 1.85, // EUR/liter
-  annualMileage: 15000, // km
-  electricDrivingPercentage: 70, // % for PHEV (typical for Finnish commuters)
+  annualMileage: 20000, // km
+  electricDrivingPercentage: 60, // % for PHEV (typical for Finnish commuters)
 };
 
 // Example vehicles for Finnish market - Mix of new and used
 const vehicles: VehicleSpecs[] = [
-  // NEW CARS
+  // NEW CARS - 2024
   {
     name: 'Toyota RAV4 PHEV',
     type: 'PHEV',
@@ -46,6 +46,39 @@ const vehicles: VehicleSpecs[] = [
     insuranceClass: 17,
   },
   {
+    name: 'Volkswagen ID.7 Pro',
+    type: 'EV',
+    purchasePrice: 58000,
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 77,
+    electricRange: 621,
+    electricConsumption: 16.3,
+    insuranceClass: 19,
+  },
+  {
+    name: 'BMW i4 eDrive40',
+    type: 'EV',
+    purchasePrice: 68000,
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 83.9,
+    electricRange: 590,
+    electricConsumption: 18.1,
+    insuranceClass: 23,
+  },
+  {
+    name: 'Kia EV6 Long Range RWD',
+    type: 'EV',
+    purchasePrice: 52000,
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 77.4,
+    electricRange: 528,
+    electricConsumption: 16.5,
+    insuranceClass: 18,
+  },
+  {
     name: 'BMW iX xDrive40',
     type: 'EV',
     purchasePrice: 85000,
@@ -66,6 +99,41 @@ const vehicles: VehicleSpecs[] = [
     electricRange: 590,
     electricConsumption: 18.7,
     insuranceClass: 26,
+  },
+
+  // USED CARS - 2022 Models
+  {
+    name: 'Volkswagen ID.7 Pro',
+    type: 'EV',
+    purchasePrice: 42000,
+    yearModel: 2022,
+    currentMileage: 35000,
+    batteryCapacity: 77,
+    electricRange: 615,
+    electricConsumption: 16.5,
+    insuranceClass: 19,
+  },
+  {
+    name: 'BMW i4 eDrive40',
+    type: 'EV',
+    purchasePrice: 48000,
+    yearModel: 2022,
+    currentMileage: 28000,
+    batteryCapacity: 83.9,
+    electricRange: 590,
+    electricConsumption: 18.1,
+    insuranceClass: 23,
+  },
+  {
+    name: 'Kia EV6 Long Range',
+    type: 'EV',
+    purchasePrice: 38000,
+    yearModel: 2022,
+    currentMileage: 32000,
+    batteryCapacity: 77.4,
+    electricRange: 528,
+    electricConsumption: 16.5,
+    insuranceClass: 18,
   },
 
   // USED CARS - 2021 Models
@@ -114,6 +182,17 @@ const vehicles: VehicleSpecs[] = [
     fuelConsumption: 5.5,
     electricConsumption: 16.5,
     insuranceClass: 20,
+  },
+  {
+    name: 'Kia EV6 GT-Line',
+    type: 'EV',
+    purchasePrice: 35000,
+    yearModel: 2021,
+    currentMileage: 48000,
+    batteryCapacity: 77.4,
+    electricRange: 506,
+    electricConsumption: 17.2,
+    insuranceClass: 18,
   },
 
   // USED CARS - 2020 Models
@@ -170,4 +249,3 @@ const vehicles: VehicleSpecs[] = [
 // Run the comparison
 const calculator = new EVTCOCalculator(finlandCosts);
 calculator.compareVehicles(vehicles);
-

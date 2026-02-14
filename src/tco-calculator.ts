@@ -51,9 +51,23 @@ class EVTCOCalculator {
   private readonly finlandCosts: FinlandCosts;
   private readonly currentYear: number;
 
-  // Finnish market specific constants
-  private readonly VEHICLE_TAX_BASE = 53.29; // EUR/year base
-  private readonly VEHICLE_TAX_CO2_RATE = 0.9; // EUR per g/km CO2
+  // Finnish market specific constants (2024-2026)
+  // Source: https://www.traficom.fi/en/transport/road/vehicle-tax
+  // NOTE: From 2026, EVs will start paying vehicle tax in Finland
+  // The tax reform introduces a new calculation method based on vehicle mass
+  
+  // 2024-2025: Current system
+  private readonly VEHICLE_TAX_BASE_2024 = 53.29; // EUR/year base
+  private readonly VEHICLE_TAX_CO2_RATE_2024 = 0.9; // EUR per g/km CO2
+  
+  // 2026+: New system (EVs will pay tax based on vehicle mass)
+  // Basic tax: €53.29 + mass-based component
+  // For EVs: approximately €3.70 per 100 kg above 1,400 kg
+  // For PHEVs: CO2-based system continues but rates may change
+  private readonly VEHICLE_TAX_BASE_2026 = 53.29; // EUR/year base
+  private readonly VEHICLE_TAX_MASS_RATE_2026 = 3.70; // EUR per 100kg above 1400kg
+  private readonly VEHICLE_TAX_CO2_RATE_2026 = 1.1; // EUR per g/km CO2 (increased for PHEVs)
+  
   private readonly MAINTENANCE_COST_EV = 300; // EUR/year
   private readonly MAINTENANCE_COST_PHEV = 500; // EUR/year
 
@@ -86,7 +100,7 @@ class EVTCOCalculator {
       const electricityCost = this.calculateElectricityCost(vehicle, year);
       const insurance = this.calculateInsurance(vehicle, remainingValue, year);
       const maintenance = this.calculateMaintenance(vehicle, year, vehicleAge);
-      const tax = this.calculateVehicleTax(vehicle);
+      const tax = this.calculateVehicleTax(vehicle, year);
 
       yearlyBreakdowns.push({
         depreciation,
@@ -267,18 +281,44 @@ class EVTCOCalculator {
     return baseCost * ageMultiplier + oldCarSurcharge;
   }
 
-  private calculateVehicleTax(vehicle: VehicleSpecs): number {
-    // EVs have 0 g/km CO2, PHEVs typically 30-50 g/km
-    const co2Emissions = vehicle.type === 'EV' ? 0 : 40; // g/km average for PHEV
-
-    return this.VEHICLE_TAX_BASE + co2Emissions * this.VEHICLE_TAX_CO2_RATE;
+  private calculateVehicleTax(vehicle: VehicleSpecs, ownershipYear: number): number {
+    const calendarYear = this.currentYear + ownershipYear;
+    
+    if (calendarYear < 2026) {
+      // Current system (2024-2025): EVs pay €0, PHEVs pay based on CO2
+      if (vehicle.type === 'EV') {
+        return 0; // EVs currently exempt
+      } else {
+        // PHEV: CO2-based tax (typically 30-50 g/km)
+        const co2Emissions = 40; // g/km average for PHEV
+        return this.VEHICLE_TAX_BASE_2024 + co2Emissions * this.VEHICLE_TAX_CO2_RATE_2024;
+      }
+    } else {
+      // New system from 2026: EVs pay mass-based tax, PHEVs continue CO2-based
+      if (vehicle.type === 'EV') {
+        // Mass-based calculation for EVs
+        // Estimate vehicle mass based on battery capacity
+        // Rough estimate: 1400kg base + 6kg per kWh of battery
+        const estimatedMass = 1400 + (vehicle.batteryCapacity * 6);
+        const massAboveThreshold = Math.max(0, estimatedMass - 1400);
+        const massTax = (massAboveThreshold / 100) * this.VEHICLE_TAX_MASS_RATE_2026;
+        
+        return this.VEHICLE_TAX_BASE_2026 + massTax;
+      } else {
+        // PHEV: CO2-based tax with potentially higher rate
+        const co2Emissions = 40; // g/km average for PHEV
+        return this.VEHICLE_TAX_BASE_2026 + co2Emissions * this.VEHICLE_TAX_CO2_RATE_2026;
+      }
+    }
   }
 
   compareVehicles(vehicles: VehicleSpecs[]): void {
     console.log('\n=== TCO COMPARISON - FINNISH MARKET (5 YEARS) ===\n');
     console.log(`Annual Mileage: ${this.finlandCosts.annualMileage} km`);
     console.log(`Electricity Price: €${this.finlandCosts.electricityPricePerKwh}/kWh`);
-    console.log(`Gasoline Price: €${this.finlandCosts.gasolinePrice}/liter\n`);
+    console.log(`Gasoline Price: €${this.finlandCosts.gasolinePrice}/liter`);
+    console.log(`\n⚠️  NOTE: From 2026, EVs will pay vehicle tax based on mass (€3.70/100kg above 1400kg)`);
+    console.log(`   PHEVs continue CO2-based taxation with potentially higher rates\n`);
 
     const results = vehicles.map((vehicle) => this.calculateTCO(vehicle));
 
@@ -358,4 +398,3 @@ class EVTCOCalculator {
 }
 
 export { EVTCOCalculator, VehicleSpecs, FinlandCosts, TCOResult };
-
