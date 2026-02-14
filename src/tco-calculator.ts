@@ -2,11 +2,14 @@ interface VehicleSpecs {
   name: string;
   type: 'PHEV' | 'EV';
   purchasePrice: number; // EUR
+  yearModel: number; // e.g., 2021, 2024
+  currentMileage: number; // km (for display purposes)
   batteryCapacity: number; // kWh
   electricRange: number; // km
   fuelConsumption?: number; // l/100km (for PHEV in hybrid mode)
   electricConsumption: number; // kWh/100km
   insuranceClass: number; // 1-30
+  condition?: 'new' | 'used'; // Auto-determined from year
 }
 
 interface FinlandCosts {
@@ -19,6 +22,9 @@ interface FinlandCosts {
 interface TCOResult {
   vehicleName: string;
   type: string;
+  yearModel: number;
+  currentMileage: number;
+  condition: string;
   year1: YearlyBreakdown;
   year2: YearlyBreakdown;
   year3: YearlyBreakdown;
@@ -27,6 +33,7 @@ interface TCOResult {
   totalCost: number;
   averageAnnualCost: number;
   residualValue: number;
+  purchasePrice: number;
 }
 
 interface YearlyBreakdown {
@@ -42,6 +49,7 @@ interface YearlyBreakdown {
 class EVTCOCalculator {
   private readonly YEARS = 5;
   private readonly finlandCosts: FinlandCosts;
+  private readonly currentYear: number;
 
   // Finnish market specific constants
   private readonly VEHICLE_TAX_BASE = 53.29; // EUR/year base
@@ -51,28 +59,33 @@ class EVTCOCalculator {
 
   constructor(costs: FinlandCosts) {
     this.finlandCosts = costs;
+    this.currentYear = new Date().getFullYear();
   }
 
   calculateTCO(vehicle: VehicleSpecs): TCOResult {
     const yearlyBreakdowns: YearlyBreakdown[] = [];
+    const vehicleAge = this.currentYear - vehicle.yearModel;
+    const condition = vehicleAge === 0 ? 'new' : 'used';
     let remainingValue = vehicle.purchasePrice;
 
     for (let year = 1; year <= this.YEARS; year++) {
       const depreciation = this.calculateDepreciation(
         vehicle.purchasePrice,
         year,
-        vehicle.type
+        vehicle.type,
+        vehicleAge
       );
       remainingValue = vehicle.purchasePrice - this.calculateTotalDepreciation(
         vehicle.purchasePrice,
         year,
-        vehicle.type
+        vehicle.type,
+        vehicleAge
       );
 
       const fuelCost = this.calculateFuelCost(vehicle, year);
       const electricityCost = this.calculateElectricityCost(vehicle, year);
       const insurance = this.calculateInsurance(vehicle, remainingValue, year);
-      const maintenance = this.calculateMaintenance(vehicle, year);
+      const maintenance = this.calculateMaintenance(vehicle, year, vehicleAge);
       const tax = this.calculateVehicleTax(vehicle);
 
       yearlyBreakdowns.push({
@@ -90,12 +103,16 @@ class EVTCOCalculator {
     const residualValue = vehicle.purchasePrice - this.calculateTotalDepreciation(
       vehicle.purchasePrice,
       this.YEARS,
-      vehicle.type
+      vehicle.type,
+      vehicleAge
     );
 
     return {
       vehicleName: vehicle.name,
       type: vehicle.type,
+      yearModel: vehicle.yearModel,
+      currentMileage: vehicle.currentMileage,
+      condition,
       year1: yearlyBreakdowns[0],
       year2: yearlyBreakdowns[1],
       year3: yearlyBreakdowns[2],
@@ -104,26 +121,50 @@ class EVTCOCalculator {
       totalCost,
       averageAnnualCost: totalCost / this.YEARS,
       residualValue,
+      purchasePrice: vehicle.purchasePrice,
     };
   }
 
   private calculateDepreciation(
     purchasePrice: number,
     year: number,
-    type: 'PHEV' | 'EV'
+    type: 'PHEV' | 'EV',
+    currentAge: number
   ): number {
-    // Depreciation rates for Finnish market
-    // EVs tend to depreciate slightly faster due to battery concerns
-    const depreciationRates = {
-      EV: [0.25, 0.15, 0.12, 0.10, 0.08], // Year 1-5
+    // Depreciation rates for Finnish market - slows down with age
+    // New cars (0-1 years old)
+    const newCarRates = {
+      EV: [0.25, 0.15, 0.12, 0.10, 0.08],
       PHEV: [0.23, 0.14, 0.11, 0.09, 0.07],
     };
 
-    const rate = depreciationRates[type][year - 1];
+    // Used cars (2-4 years old)
+    const youngUsedRates = {
+      EV: [0.12, 0.10, 0.09, 0.08, 0.07],
+      PHEV: [0.11, 0.09, 0.08, 0.07, 0.06],
+    };
+
+    // Older used cars (5+ years old)
+    const olderUsedRates = {
+      EV: [0.08, 0.07, 0.06, 0.05, 0.04],
+      PHEV: [0.07, 0.06, 0.05, 0.04, 0.03],
+    };
+
+    let rates;
+    if (currentAge === 0) {
+      rates = newCarRates[type];
+    } else if (currentAge <= 4) {
+      rates = youngUsedRates[type];
+    } else {
+      rates = olderUsedRates[type];
+    }
+
+    const rate = rates[year - 1];
     const previousDepreciation = this.calculateTotalDepreciation(
       purchasePrice,
       year - 1,
-      type
+      type,
+      currentAge
     );
     const remainingValue = purchasePrice - previousDepreciation;
 
@@ -133,18 +174,38 @@ class EVTCOCalculator {
   private calculateTotalDepreciation(
     purchasePrice: number,
     upToYear: number,
-    type: 'PHEV' | 'EV'
+    type: 'PHEV' | 'EV',
+    currentAge: number
   ): number {
     let totalDepreciation = 0;
     let remainingValue = purchasePrice;
 
-    const depreciationRates = {
+    const newCarRates = {
       EV: [0.25, 0.15, 0.12, 0.10, 0.08],
       PHEV: [0.23, 0.14, 0.11, 0.09, 0.07],
     };
 
+    const youngUsedRates = {
+      EV: [0.12, 0.10, 0.09, 0.08, 0.07],
+      PHEV: [0.11, 0.09, 0.08, 0.07, 0.06],
+    };
+
+    const olderUsedRates = {
+      EV: [0.08, 0.07, 0.06, 0.05, 0.04],
+      PHEV: [0.07, 0.06, 0.05, 0.04, 0.03],
+    };
+
+    let rates;
+    if (currentAge === 0) {
+      rates = newCarRates[type];
+    } else if (currentAge <= 4) {
+      rates = youngUsedRates[type];
+    } else {
+      rates = olderUsedRates[type];
+    }
+
     for (let year = 0; year < upToYear; year++) {
-      const depreciation = remainingValue * depreciationRates[type][year];
+      const depreciation = remainingValue * rates[year];
       totalDepreciation += depreciation;
       remainingValue -= depreciation;
     }
@@ -192,14 +253,18 @@ class EVTCOCalculator {
     return currentValue * baseRate * classMultiplier;
   }
 
-  private calculateMaintenance(vehicle: VehicleSpecs, year: number): number {
+  private calculateMaintenance(vehicle: VehicleSpecs, year: number, currentAge: number): number {
     const baseCost =
       vehicle.type === 'EV' ? this.MAINTENANCE_COST_EV : this.MAINTENANCE_COST_PHEV;
 
-    // Maintenance costs increase slightly with age
-    const ageMultiplier = 1 + (year - 1) * 0.1;
+    // Maintenance costs increase with total age (current age + ownership years)
+    const totalAge = currentAge + year;
+    const ageMultiplier = 1 + (totalAge - 1) * 0.08;
 
-    return baseCost * ageMultiplier;
+    // Additional cost for older cars (5+ years)
+    const oldCarSurcharge = totalAge >= 5 ? 100 : 0;
+
+    return baseCost * ageMultiplier + oldCarSurcharge;
   }
 
   private calculateVehicleTax(vehicle: VehicleSpecs): number {
@@ -225,9 +290,10 @@ class EVTCOCalculator {
   }
 
   private printVehicleResult(result: TCOResult): void {
-    console.log(`\n${'='.repeat(60)}`);
-    console.log(`${result.vehicleName} (${result.type})`);
-    console.log('='.repeat(60));
+    console.log(`\n${'='.repeat(70)}`);
+    console.log(`${result.vehicleName} (${result.type}) - ${result.yearModel} Model`);
+    console.log(`Condition: ${result.condition.toUpperCase()} | Current Mileage: ${result.currentMileage.toLocaleString()} km | Purchase Price: €${result.purchasePrice.toLocaleString()}`);
+    console.log('='.repeat(70));
 
     console.log('\nYearly Breakdown:');
     console.log(
@@ -250,29 +316,46 @@ class EVTCOCalculator {
   }
 
   private printComparison(results: TCOResult[]): void {
-    console.log('\n\n' + '='.repeat(60));
+    console.log('\n\n' + '='.repeat(70));
     console.log('SUMMARY COMPARISON');
-    console.log('='.repeat(60));
+    console.log('='.repeat(70));
 
     results.sort((a, b) => a.totalCost - b.totalCost);
 
     console.log('\nRanked by Total Cost of Ownership:');
     results.forEach((result, index) => {
-      const savings =
-        index > 0 ? results[0].totalCost - result.totalCost : 0;
+      const savings = index > 0 ? result.totalCost - results[0].totalCost : 0;
+      const condition = result.condition === 'new' ? '🆕' : '🔄';
       console.log(
-        `${index + 1}. ${result.vehicleName} (${result.type}): €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (€${Math.abs(savings).toFixed(2)} ${savings > 0 ? 'cheaper' : 'more expensive'})` : ' (BEST)'}`
+        `${index + 1}. ${condition} ${result.vehicleName} (${result.type}, ${result.yearModel}): €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (+€${Math.abs(savings).toFixed(2)} vs best)` : ' ⭐ BEST'}`
       );
     });
 
-    console.log('\nNet Cost (Purchase - Residual Value):');
+    console.log('\nNet Cost After Resale (Total Cost - Residual Value):');
     results.forEach((result) => {
       const netCost = result.totalCost - result.residualValue;
       console.log(
-        `${result.vehicleName}: €${netCost.toFixed(2)} (Residual: €${result.residualValue.toFixed(2)})`
+        `${result.vehicleName} (${result.yearModel}): €${netCost.toFixed(2)} (Residual: €${result.residualValue.toFixed(2)})`
       );
     });
+
+    console.log('\n\nNew vs Used Comparison:');
+    const newCars = results.filter(r => r.condition === 'new');
+    const usedCars = results.filter(r => r.condition === 'used');
+    
+    if (newCars.length > 0) {
+      console.log('\n🆕 Best New Car:');
+      const bestNew = newCars[0];
+      console.log(`   ${bestNew.vehicleName} - €${bestNew.totalCost.toFixed(2)} total TCO`);
+    }
+    
+    if (usedCars.length > 0) {
+      console.log('\n🔄 Best Used Car:');
+      const bestUsed = usedCars[0];
+      console.log(`   ${bestUsed.vehicleName} (${bestUsed.yearModel}) - €${bestUsed.totalCost.toFixed(2)} total TCO`);
+    }
   }
 }
 
 export { EVTCOCalculator, VehicleSpecs, FinlandCosts, TCOResult };
+
