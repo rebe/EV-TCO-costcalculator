@@ -95,6 +95,10 @@ You can override these with vehicle-specific factors using the \`realWorldConsum
 
 The full comparison includes 30+ vehicles across all categories with detailed yearly breakdowns and cost analysis.
 
+## How calculations work?
+
+** [Explain the calculations results](results/HOW_IT_WORKS.md)**
+
 ### Quick Summary (20,000 km/year)
 
 **Top 5 Best TCO (5-Year Total Cost):**
