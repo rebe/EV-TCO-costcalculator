@@ -473,7 +473,25 @@
 - Residual Value: €50,807.13
 - Net Cost (after resale): €-8,316.08
 
-### 26. 🔄 🔌 VW Passat GTE (2021)
+### 26. 🔄 🔌 Volvo XC90 T8 Recharge (2024)
+
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Price**: €82,000
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|
+| 1 | €9020 | €932 | €437 | €1292 | €580 | €97 | **€12358** |
+| 2 | €6568 | €932 | €437 | €1175 | €620 | €97 | **€9830** |
+| 3 | €5313 | €932 | €437 | €1081 | €760 | €97 | **€8621** |
+| 4 | €4277 | €932 | €437 | €1006 | €800 | €97 | **€7549** |
+| 5 | €3409 | €932 | €437 | €945 | €840 | €97 | **€6661** |
+
+**5-Year Summary:**
+- Total Cost: **€45,020.54**
+- Average Annual Cost: €9,004.11
+- Residual Value: €53,412.62
+- Net Cost (after resale): €-8,392.08
+
+### 27. 🔄 🔌 VW Passat GTE (2021)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 45,000 km | **Price**: €28,000
 
@@ -491,7 +509,7 @@
 - Residual Value: €21,653.86
 - Net Cost (after resale): €-3,542.47
 
-### 27. 🔄 🔌 BMW 330e (2021)
+### 28. 🔄 🔌 BMW 330e (2021)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 42,000 km | **Price**: €35,000
 
@@ -509,7 +527,7 @@
 - Residual Value: €27,067.33
 - Net Cost (after resale): €-6,912.86
 
-### 28. 🔄 🔌 Volvo XC60 T8 Recharge (2020)
+### 29. 🔄 🔌 Volvo XC60 T8 Recharge (2020)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 48,000 km | **Price**: €42,000
 
@@ -527,7 +545,7 @@
 - Residual Value: €32,480.80
 - Net Cost (after resale): €-8,545.39
 
-### 29. 🔄 🔌 Mitsubishi Outlander PHEV (2020)
+### 30. 🔄 🔌 Mitsubishi Outlander PHEV (2020)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 55,000 km | **Price**: €28,000
 
@@ -545,7 +563,7 @@
 - Residual Value: €21,653.86
 - Net Cost (after resale): €-2,559.65
 
-### 30. 🔄 🔌 Kia Niro PHEV (2019)
+### 31. 🔄 🔌 Kia Niro PHEV (2019)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 65,000 km | **Price**: €22,000
 
@@ -563,7 +581,7 @@
 - Residual Value: €17,013.75
 - Net Cost (after resale): €-697.92
 
-### 31. 🔄 🔌 BMW X5 xDrive45e (2019)
+### 32. 🔄 🔌 BMW X5 xDrive45e (2019)
 
 **Type**: PHEV | **Condition**: used | **Mileage**: 62,000 km | **Price**: €48,000
 
@@ -581,7 +599,7 @@
 - Residual Value: €37,120.91
 - Net Cost (after resale): €-10,673.29
 
-### 32. 🔄 ⛽ Toyota RAV4 Hybrid (2024)
+### 33. 🔄 ⛽ Toyota RAV4 Hybrid (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Price**: €42,000
 
@@ -599,7 +617,7 @@
 - Residual Value: €28,881.12
 - Net Cost (after resale): €5,150.23
 
-### 33. 🔄 ⛽ Volkswagen Tiguan 2.0 TDI (2024)
+### 34. 🔄 ⛽ Volkswagen Tiguan 2.0 TDI (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Price**: €45,000
 
@@ -617,7 +635,7 @@
 - Residual Value: €30,944.06
 - Net Cost (after resale): €5,111.10
 
-### 34. 🔄 ⛽ BMW 320d (2024)
+### 35. 🔄 ⛽ BMW 320d (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Price**: €52,000
 
@@ -635,7 +653,7 @@
 - Residual Value: €35,757.58
 - Net Cost (after resale): €1,551.92
 
-### 35. 🔄 ⛽ Mazda CX-60 Diesel (2024)
+### 36. 🔄 ⛽ Mazda CX-60 Diesel (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Price**: €48,000
 
@@ -653,7 +671,7 @@
 - Residual Value: €33,006.99
 - Net Cost (after resale): €3,746.21
 
-### 36. 🔄 ⛽ Skoda Octavia 2.0 TDI (2024)
+### 37. 🔄 ⛽ Skoda Octavia 2.0 TDI (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Price**: €35,000
 
@@ -671,7 +689,7 @@
 - Residual Value: €24,067.60
 - Net Cost (after resale): €5,991.75
 
-### 37. 🔄 ⛽ Toyota Corolla Hybrid (2021)
+### 38. 🔄 ⛽ Toyota Corolla Hybrid (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 48,000 km | **Price**: €22,000
 
@@ -689,7 +707,7 @@
 - Residual Value: €17,928.47
 - Net Cost (after resale): €4,170.78
 
-### 38. 🔄 ⛽ Volkswagen Golf 1.5 TSI (2021)
+### 39. 🔄 ⛽ Volkswagen Golf 1.5 TSI (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 52,000 km | **Price**: €20,000
 
@@ -707,7 +725,7 @@
 - Residual Value: €16,298.61
 - Net Cost (after resale): €8,094.77
 
-### 39. 🔄 ⛽ BMW 320d (2021)
+### 40. 🔄 ⛽ BMW 320d (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 45,000 km | **Price**: €32,000
 
@@ -725,7 +743,7 @@
 - Residual Value: €26,077.77
 - Net Cost (after resale): €886.97
 
-### 40. 🔄 ⛽ Skoda Octavia 2.0 TDI (2019)
+### 41. 🔄 ⛽ Skoda Octavia 2.0 TDI (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 68,000 km | **Price**: €18,000
 
@@ -743,7 +761,7 @@
 - Residual Value: €14,668.75
 - Net Cost (after resale): €8,507.89
 
-### 41. 🔄 ⛽ Toyota Yaris Hybrid (2019)
+### 42. 🔄 ⛽ Toyota Yaris Hybrid (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 72,000 km | **Price**: €15,000
 
@@ -761,7 +779,7 @@
 - Residual Value: €12,223.96
 - Net Cost (after resale): €8,016.27
 
-### 42. 🔄 ⛽ Mazda 3 Skyactiv-G (2019)
+### 43. 🔄 ⛽ Mazda 3 Skyactiv-G (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 65,000 km | **Price**: €16,000
 
@@ -779,7 +797,7 @@
 - Residual Value: €13,038.89
 - Net Cost (after resale): €11,318.69
 
-### 43. 🔄 ⛽ Volkswagen Passat 2.0 TDI (2018)
+### 44. 🔄 ⛽ Volkswagen Passat 2.0 TDI (2018)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 85,000 km | **Price**: €16,000
 
@@ -848,6 +866,7 @@
 | 41 | 🔄 ⚡ Mercedes-Benz EQE 350 | EV | 2024 | used | €42,102.27 | +€25,786.44 |
 | 42 | 🔄 🔌 Mercedes-Benz GLE 350 de | PHEV | 2024 | used | €42,491.05 | +€26,175.22 |
 | 43 | 🔄 ⚡ BMW iX xDrive40 | EV | 2024 | used | €43,452.11 | +€27,136.28 |
+| 44 | 🔄 🔌 Volvo XC90 T8 Recharge | PHEV | 2024 | used | €45,020.54 | +€28,704.71 |
 
 ### Net Cost After Resale
 
@@ -896,6 +915,7 @@
 | Mercedes-Benz EQE 350 | 2024 | €42,102.27 | €50,565.14 | €-8,462.87 |
 | Mercedes-Benz GLE 350 de | 2024 | €42,491.05 | €50,807.13 | €-8,316.08 |
 | BMW iX xDrive40 | 2024 | €43,452.11 | €52,415.08 | €-8,962.97 |
+| Volvo XC90 T8 Recharge | 2024 | €45,020.54 | €53,412.62 | €-8,392.08 |
 
 ### Best by Category
 

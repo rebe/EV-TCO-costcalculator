@@ -50,7 +50,18 @@ export const phevVehicles: VehicleSpecs[] = [
     electricConsumption: 22.0,
     insuranceClass: 25,
   },
-
+  {
+    name: 'Volvo XC90 T8 Recharge',
+    type: 'PHEV',
+    purchasePrice: 82000,
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 18.8,
+    electricRange: 71,
+    fuelConsumption: 8.4, // l/100km in hybrid mode (larger, heavier SUV)
+    electricConsumption: 22.7, // kWh/100km
+    insuranceClass: 24,
+  },
   // USED PHEVs - 2021
   {
     name: 'VW Passat GTE',
