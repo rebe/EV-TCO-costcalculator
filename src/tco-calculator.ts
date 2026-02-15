@@ -1,22 +1,24 @@
 interface VehicleSpecs {
   name: string;
-  type: 'PHEV' | 'EV';
+  type: 'PHEV' | 'EV' | 'ICE'; // Added ICE (Internal Combustion Engine)
   purchasePrice: number; // EUR
   yearModel: number; // e.g., 2021, 2024
   currentMileage: number; // km (for display purposes)
-  batteryCapacity: number; // kWh
-  electricRange: number; // km
-  fuelConsumption?: number; // l/100km (for PHEV in hybrid mode)
-  electricConsumption: number; // kWh/100km
+  batteryCapacity: number; // kWh (0 for ICE)
+  electricRange: number; // km (0 for ICE)
+  fuelConsumption?: number; // l/100km (for PHEV and ICE)
+  electricConsumption: number; // kWh/100km (0 for ICE)
   insuranceClass: number; // 1-30
   condition?: 'new' | 'used'; // Auto-determined from year
+  realWorldConsumptionFactor?: number; // Optional: override global factor for specific vehicle
 }
 
 interface FinlandCosts {
   electricityPricePerKwh: number; // EUR/kWh
   gasolinePrice: number; // EUR/liter
   annualMileage: number; // km
-  electricDrivingPercentage: number; // % for PHEV
+  electricDrivingPercentage: number; // % for PHEV (0 for ICE, 100 for EV)
+  realWorldElectricConsumptionFactor: number; // Multiplier for realistic consumption (e.g., 1.2 = 20% higher)
 }
 
 interface TCOResult {
@@ -55,21 +57,39 @@ class EVTCOCalculator {
   // Source: https://www.traficom.fi/en/transport/road/vehicle-tax
   // NOTE: From 2026, EVs will start paying vehicle tax in Finland
   // The tax reform introduces a new calculation method based on vehicle mass
-  
+
   // 2024-2025: Current system
   private readonly VEHICLE_TAX_BASE_2024 = 53.29; // EUR/year base
   private readonly VEHICLE_TAX_CO2_RATE_2024 = 0.9; // EUR per g/km CO2
-  
+
   // 2026+: New system (EVs will pay tax based on vehicle mass)
   // Basic tax: €53.29 + mass-based component
   // For EVs: approximately €3.70 per 100 kg above 1,400 kg
-  // For PHEVs: CO2-based system continues but rates may change
+  // For PHEVs/ICE: CO2-based system continues but rates may change
   private readonly VEHICLE_TAX_BASE_2026 = 53.29; // EUR/year base
   private readonly VEHICLE_TAX_MASS_RATE_2026 = 3.70; // EUR per 100kg above 1400kg
-  private readonly VEHICLE_TAX_CO2_RATE_2026 = 1.1; // EUR per g/km CO2 (increased for PHEVs)
-  
+  private readonly VEHICLE_TAX_CO2_RATE_2026 = 1.1; // EUR per g/km CO2 (increased for PHEVs/ICE)
+
   private readonly MAINTENANCE_COST_EV = 300; // EUR/year
   private readonly MAINTENANCE_COST_PHEV = 500; // EUR/year
+  private readonly MAINTENANCE_COST_ICE = 700; // EUR/year (highest due to oil changes, etc.)
+
+  // Real-world consumption factors based on user data
+  // Source: Spritmonitor.de, ADAC tests, and Finnish EV forums
+  // Winter conditions in Finland increase consumption significantly
+  private readonly DEFAULT_CONSUMPTION_FACTORS = {
+    // EVs: WLTP vs real-world (Finnish climate with winter)
+    // Summer: +10-15%, Winter: +30-40%, Annual average: +20-25%
+    EV: 1.22, // 22% higher than WLTP (conservative estimate for Finnish conditions)
+
+    // PHEVs: Similar to EVs when running on electric
+    // Often driven more aggressively, less efficient than pure EVs
+    PHEV: 1.25, // 25% higher than WLTP
+
+    // ICE: Modern cars are closer to WLTP, but still optimistic
+    // Real-world typically 10-20% higher
+    ICE: 1.15, // 15% higher than WLTP
+  };
 
   constructor(costs: FinlandCosts) {
     this.finlandCosts = costs;
@@ -142,7 +162,7 @@ class EVTCOCalculator {
   private calculateDepreciation(
     purchasePrice: number,
     year: number,
-    type: 'PHEV' | 'EV',
+    type: 'PHEV' | 'EV' | 'ICE',
     currentAge: number
   ): number {
     // Depreciation rates for Finnish market - slows down with age
@@ -150,18 +170,21 @@ class EVTCOCalculator {
     const newCarRates = {
       EV: [0.25, 0.15, 0.12, 0.10, 0.08],
       PHEV: [0.23, 0.14, 0.11, 0.09, 0.07],
+      ICE: [0.20, 0.13, 0.10, 0.08, 0.06], // ICE depreciates slower initially but less desirable long-term
     };
 
     // Used cars (2-4 years old)
     const youngUsedRates = {
       EV: [0.12, 0.10, 0.09, 0.08, 0.07],
       PHEV: [0.11, 0.09, 0.08, 0.07, 0.06],
+      ICE: [0.10, 0.08, 0.07, 0.06, 0.05],
     };
 
     // Older used cars (5+ years old)
     const olderUsedRates = {
       EV: [0.08, 0.07, 0.06, 0.05, 0.04],
       PHEV: [0.07, 0.06, 0.05, 0.04, 0.03],
+      ICE: [0.06, 0.05, 0.04, 0.03, 0.02],
     };
 
     let rates;
@@ -188,7 +211,7 @@ class EVTCOCalculator {
   private calculateTotalDepreciation(
     purchasePrice: number,
     upToYear: number,
-    type: 'PHEV' | 'EV',
+    type: 'PHEV' | 'EV' | 'ICE',
     currentAge: number
   ): number {
     let totalDepreciation = 0;
@@ -197,16 +220,19 @@ class EVTCOCalculator {
     const newCarRates = {
       EV: [0.25, 0.15, 0.12, 0.10, 0.08],
       PHEV: [0.23, 0.14, 0.11, 0.09, 0.07],
+      ICE: [0.20, 0.13, 0.10, 0.08, 0.06],
     };
 
     const youngUsedRates = {
       EV: [0.12, 0.10, 0.09, 0.08, 0.07],
       PHEV: [0.11, 0.09, 0.08, 0.07, 0.06],
+      ICE: [0.10, 0.08, 0.07, 0.06, 0.05],
     };
 
     const olderUsedRates = {
       EV: [0.08, 0.07, 0.06, 0.05, 0.04],
       PHEV: [0.07, 0.06, 0.05, 0.04, 0.03],
+      ICE: [0.06, 0.05, 0.04, 0.03, 0.02],
     };
 
     let rates;
@@ -230,15 +256,30 @@ class EVTCOCalculator {
   private calculateFuelCost(vehicle: VehicleSpecs, year: number): number {
     if (vehicle.type === 'EV') return 0;
 
-    // For PHEV, calculate fuel cost based on non-electric driving
-    const nonElectricPercentage = 1 - this.finlandCosts.electricDrivingPercentage / 100;
-    const kmOnFuel = this.finlandCosts.annualMileage * nonElectricPercentage;
-    const litersUsed = (kmOnFuel / 100) * (vehicle.fuelConsumption || 0);
+    let kmOnFuel: number;
+
+    if (vehicle.type === 'ICE') {
+      // ICE cars use 100% fuel
+      kmOnFuel = this.finlandCosts.annualMileage;
+    } else {
+      // PHEV: calculate fuel cost based on non-electric driving
+      const nonElectricPercentage = 1 - this.finlandCosts.electricDrivingPercentage / 100;
+      kmOnFuel = this.finlandCosts.annualMileage * nonElectricPercentage;
+    }
+
+    // Apply real-world consumption factor for ICE
+    const consumptionFactor = vehicle.type === 'ICE'
+      ? this.DEFAULT_CONSUMPTION_FACTORS.ICE
+      : 1.0; // PHEV fuel consumption is already realistic in specs
+
+    const litersUsed = (kmOnFuel / 100) * (vehicle.fuelConsumption || 0) * consumptionFactor;
 
     return litersUsed * this.finlandCosts.gasolinePrice;
   }
 
   private calculateElectricityCost(vehicle: VehicleSpecs, year: number): number {
+    if (vehicle.type === 'ICE') return 0;
+
     let electricKm: number;
 
     if (vehicle.type === 'EV') {
@@ -250,7 +291,17 @@ class EVTCOCalculator {
         (this.finlandCosts.electricDrivingPercentage / 100);
     }
 
-    const kwhUsed = (electricKm / 100) * vehicle.electricConsumption;
+    // Use vehicle-specific factor if provided, otherwise use default for vehicle type
+    const consumptionFactor = vehicle.realWorldConsumptionFactor !== undefined
+      ? vehicle.realWorldConsumptionFactor
+      : (vehicle.type === 'EV'
+          ? this.DEFAULT_CONSUMPTION_FACTORS.EV
+          : this.DEFAULT_CONSUMPTION_FACTORS.PHEV);
+
+    // Apply real-world consumption factor
+    const realWorldConsumption = vehicle.electricConsumption * consumptionFactor;
+    const kwhUsed = (electricKm / 100) * realWorldConsumption;
+
     return kwhUsed * this.finlandCosts.electricityPricePerKwh;
   }
 
@@ -268,8 +319,15 @@ class EVTCOCalculator {
   }
 
   private calculateMaintenance(vehicle: VehicleSpecs, year: number, currentAge: number): number {
-    const baseCost =
-      vehicle.type === 'EV' ? this.MAINTENANCE_COST_EV : this.MAINTENANCE_COST_PHEV;
+    let baseCost: number;
+
+    if (vehicle.type === 'EV') {
+      baseCost = this.MAINTENANCE_COST_EV;
+    } else if (vehicle.type === 'PHEV') {
+      baseCost = this.MAINTENANCE_COST_PHEV;
+    } else {
+      baseCost = this.MAINTENANCE_COST_ICE;
+    }
 
     // Maintenance costs increase with total age (current age + ownership years)
     const totalAge = currentAge + year;
@@ -283,18 +341,20 @@ class EVTCOCalculator {
 
   private calculateVehicleTax(vehicle: VehicleSpecs, ownershipYear: number): number {
     const calendarYear = this.currentYear + ownershipYear;
-    
+
     if (calendarYear < 2026) {
-      // Current system (2024-2025): EVs pay €0, PHEVs pay based on CO2
+      // Current system (2024-2025): EVs pay €0, PHEVs/ICE pay based on CO2
       if (vehicle.type === 'EV') {
         return 0; // EVs currently exempt
       } else {
-        // PHEV: CO2-based tax (typically 30-50 g/km)
-        const co2Emissions = 40; // g/km average for PHEV
+        // PHEV/ICE: CO2-based tax
+        // PHEV: typically 30-50 g/km
+        // ICE: typically 120-180 g/km for modern cars
+        const co2Emissions = vehicle.type === 'PHEV' ? 40 : 150; // g/km average
         return this.VEHICLE_TAX_BASE_2024 + co2Emissions * this.VEHICLE_TAX_CO2_RATE_2024;
       }
     } else {
-      // New system from 2026: EVs pay mass-based tax, PHEVs continue CO2-based
+      // New system from 2026: EVs pay mass-based tax, PHEVs/ICE continue CO2-based
       if (vehicle.type === 'EV') {
         // Mass-based calculation for EVs
         // Estimate vehicle mass based on battery capacity
@@ -302,11 +362,11 @@ class EVTCOCalculator {
         const estimatedMass = 1400 + (vehicle.batteryCapacity * 6);
         const massAboveThreshold = Math.max(0, estimatedMass - 1400);
         const massTax = (massAboveThreshold / 100) * this.VEHICLE_TAX_MASS_RATE_2026;
-        
+
         return this.VEHICLE_TAX_BASE_2026 + massTax;
       } else {
-        // PHEV: CO2-based tax with potentially higher rate
-        const co2Emissions = 40; // g/km average for PHEV
+        // PHEV/ICE: CO2-based tax with potentially higher rate
+        const co2Emissions = vehicle.type === 'PHEV' ? 40 : 150; // g/km average
         return this.VEHICLE_TAX_BASE_2026 + co2Emissions * this.VEHICLE_TAX_CO2_RATE_2026;
       }
     }
@@ -317,8 +377,12 @@ class EVTCOCalculator {
     console.log(`Annual Mileage: ${this.finlandCosts.annualMileage} km`);
     console.log(`Electricity Price: €${this.finlandCosts.electricityPricePerKwh}/kWh`);
     console.log(`Gasoline Price: €${this.finlandCosts.gasolinePrice}/liter`);
+    console.log(`\n⚠️  NOTE: Real-world consumption factors applied:`);
+    console.log(`   - EVs: ${(this.DEFAULT_CONSUMPTION_FACTORS.EV * 100 - 100).toFixed(0)}% higher than WLTP (Finnish winter conditions)`);
+    console.log(`   - PHEVs: ${(this.DEFAULT_CONSUMPTION_FACTORS.PHEV * 100 - 100).toFixed(0)}% higher than WLTP`);
+    console.log(`   - ICE: ${(this.DEFAULT_CONSUMPTION_FACTORS.ICE * 100 - 100).toFixed(0)}% higher than WLTP`);
     console.log(`\n⚠️  NOTE: From 2026, EVs will pay vehicle tax based on mass (€3.70/100kg above 1400kg)`);
-    console.log(`   PHEVs continue CO2-based taxation with potentially higher rates\n`);
+    console.log(`   PHEVs/ICE continue CO2-based taxation with potentially higher rates\n`);
 
     const results = vehicles.map((vehicle) => this.calculateTCO(vehicle));
 
@@ -365,9 +429,10 @@ class EVTCOCalculator {
     console.log('\nRanked by Total Cost of Ownership:');
     results.forEach((result, index) => {
       const savings = index > 0 ? result.totalCost - results[0].totalCost : 0;
-      const condition = result.condition === 'new' ? '🆕' : '🔄';
+      const emoji = result.condition === 'new' ? '🆕' : '🔄';
+      const typeEmoji = result.type === 'EV' ? '⚡' : result.type === 'PHEV' ? '🔌' : '⛽';
       console.log(
-        `${index + 1}. ${condition} ${result.vehicleName} (${result.type}, ${result.yearModel}): €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (+€${Math.abs(savings).toFixed(2)} vs best)` : ' ⭐ BEST'}`
+        `${index + 1}. ${emoji} ${typeEmoji} ${result.vehicleName} (${result.type}, ${result.yearModel}): €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (+€${Math.abs(savings).toFixed(2)} vs best)` : ' ⭐ BEST'}`
       );
     });
 
@@ -382,17 +447,33 @@ class EVTCOCalculator {
     console.log('\n\nNew vs Used Comparison:');
     const newCars = results.filter(r => r.condition === 'new');
     const usedCars = results.filter(r => r.condition === 'used');
-    
+
     if (newCars.length > 0) {
       console.log('\n🆕 Best New Car:');
       const bestNew = newCars[0];
       console.log(`   ${bestNew.vehicleName} - €${bestNew.totalCost.toFixed(2)} total TCO`);
     }
-    
+
     if (usedCars.length > 0) {
       console.log('\n🔄 Best Used Car:');
       const bestUsed = usedCars[0];
       console.log(`   ${bestUsed.vehicleName} (${bestUsed.yearModel}) - €${bestUsed.totalCost.toFixed(2)} total TCO`);
+    }
+
+    // Type comparison
+    console.log('\n\nBy Vehicle Type:');
+    const evs = results.filter(r => r.type === 'EV');
+    const phevs = results.filter(r => r.type === 'PHEV');
+    const ices = results.filter(r => r.type === 'ICE');
+
+    if (evs.length > 0) {
+      console.log(`\n⚡ Best EV: ${evs[0].vehicleName} (${evs[0].yearModel}) - €${evs[0].totalCost.toFixed(2)}`);
+    }
+    if (phevs.length > 0) {
+      console.log(`🔌 Best PHEV: ${phevs[0].vehicleName} (${phevs[0].yearModel}) - €${phevs[0].totalCost.toFixed(2)}`);
+    }
+    if (ices.length > 0) {
+      console.log(`⛽ Best ICE: ${ices[0].vehicleName} (${ices[0].yearModel}) - €${ices[0].totalCost.toFixed(2)}`);
     }
   }
 }

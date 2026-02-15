@@ -1,15 +1,18 @@
 # EV & PHEV Total Cost of Ownership Calculator - Finland
 
-A comprehensive TypeScript-based calculator for comparing the Total Cost of Ownership (TCO) of Electric Vehicles (EVs) and Plug-in Hybrid Electric Vehicles (PHEVs) in the Finnish market over a 5-year period.
+A comprehensive TypeScript-based calculator for comparing the Total Cost of Ownership (TCO) of Electric Vehicles (EVs), Plug-in Hybrid Electric Vehicles (PHEVs), and Internal Combustion Engine (ICE) vehicles in the Finnish market over a 5-year period.
 
 ## Features
 
 - **Comprehensive TCO Analysis**: Calculates depreciation, fuel costs, electricity costs, insurance, maintenance, and vehicle tax
+- **Multi-Vehicle Type Support**: Compare EVs, PHEVs, and ICE vehicles side-by-side
 - **New & Used Vehicle Support**: Compares both new and used vehicles with age-adjusted depreciation rates
 - **2026 Tax Reform Compliance**: Implements the new Finnish vehicle tax system for EVs (mass-based) starting in 2026
+- **Real-World Consumption Factors**: Applies realistic consumption multipliers based on Finnish winter conditions
 - **Real Finnish Market Data**: Uses actual 2025 electricity prices, fuel costs, and tax rates
-- **Multiple Vehicle Comparison**: Compare up to 20+ vehicles side-by-side
+- **Multiple Vehicle Comparison**: Compare 30+ vehicles across all categories
 - **Detailed Yearly Breakdown**: See costs broken down year-by-year for the 5-year ownership period
+- **Modular Vehicle Database**: Separate data files for EVs, PHEVs, and ICE vehicles
 
 ## Installation
 
@@ -34,7 +37,8 @@ const finlandCosts: FinlandCosts = {
   electricityPricePerKwh: 0.11, // EUR/kWh (6c energy + 5c transfer)
   gasolinePrice: 1.85, // EUR/liter
   annualMileage: 15000, // km
-  electricDrivingPercentage: 70, // % for PHEV
+  electricDrivingPercentage: 70, // % for PHEV (0 for ICE)
+  realWorldElectricConsumptionFactor: 1.22, // 22% higher than WLTP
 };
 
 const vehicle: VehicleSpecs = {
@@ -60,82 +64,75 @@ const result = calculator.calculateTCO(vehicle);
 - **Vehicle Tax (2024-2025)**: 
   - EVs: €0 (exempt)
   - PHEVs: €53.29 + (CO2 g/km × €0.90)
+  - ICE: €53.29 + (CO2 g/km × €0.90)
 - **Vehicle Tax (2026+)**:
   - EVs: €53.29 + (€3.70 per 100kg above 1,400kg)
-  - PHEVs: €53.29 + (CO2 g/km × €1.10)
+  - PHEVs/ICE: €53.29 + (CO2 g/km × €1.10)
+
+## Real-World Consumption Factors
+
+The calculator applies realistic consumption multipliers based on actual user data and Finnish winter conditions:
+
+- **EVs**: 22% higher than WLTP (1.22x multiplier)
+  - Accounts for winter heating, battery efficiency loss in cold weather
+  - Based on data from Finnish EV forums and Spritmonitor.de
+  
+- **PHEVs**: 25% higher than WLTP (1.25x multiplier)
+  - Electric mode consumption affected by cold weather
+  - Often driven more aggressively than pure EVs
+  
+- **ICE**: 15% higher than WLTP (1.15x multiplier)
+  - Modern engines closer to WLTP but still optimistic
+  - Real-world driving conditions and winter fuel consumption
+
+You can override these with vehicle-specific factors using the \`realWorldConsumptionFactor\` property.
 
 ## Example Results
 
-Based on actual calculations with 15,000 km annual mileage:
+**📊 [View Full Comparison Results](results/COMPARE.md)**
 
-### Top 5 Best TCO (5-Year Total Cost)
+The full comparison includes 30+ vehicles across all categories with detailed yearly breakdowns and cost analysis.
 
-1. 🔄 **Kia Niro PHEV (2019)**: €16,577.70 ⭐ BEST
-   - Purchase: €22,000 | Mileage: 65,000 km
-   - Net cost after resale: -€436.05 (you make money!)
+### Quick Summary (20,000 km/year)
 
-2. 🔄 **Kia EV6 GT-Line (2021)**: €16,681.33
-   - Purchase: €35,000 | Mileage: 48,000 km
-   - Net cost after resale: -€8,990.77
+**Top 5 Best TCO (5-Year Total Cost):**
 
-3. 🔄 **Tesla Model 3 Long Range (2021)**: €17,532.18
-   - Purchase: €38,000 | Mileage: 52,000 km
-   - Net cost after resale: -€10,340.40
+1. 🔄 🔌 **Kia Niro PHEV (2019)**: €16,315.83 ⭐ BEST
+2. 🔄 ⚡ **Kia EV6 GT-Line (2021)**: €17,140.38
+3. 🔄 ⚡ **Tesla Model 3 Long Range (2021)**: €17,953.76
+4. 🔄 🔌 **VW Passat GTE (2021)**: €18,111.39
+5. 🔄 🔌 **Mitsubishi Outlander PHEV (2020)**: €19,094.22
 
-4. 🔄 **VW Passat GTE (2021)**: €18,448.14
-   - Purchase: €28,000 | Mileage: 45,000 km
-   - Net cost after resale: -€3,205.72
+**Best by Category:**
+- ⚡ **Best EV**: Kia EV6 GT-Line (2021) - €17,140.38
+- 🔌 **Best PHEV**: Kia Niro PHEV (2019) - €16,315.83
+- ⛽ **Best ICE**: Toyota Yaris Hybrid (2019) - €20,240.22
 
-5. 🔄 **BMW 330e (2021)**: €20,406.69
-   - Purchase: €35,000 | Mileage: 42,000 km
-   - Net cost after resale: -€6,660.64
+**Best New Car:**
+- 🆕 **Volkswagen ID.4 Pro (2024)**: €26,131.23
 
-### Best New Car
-
-🆕 **Volkswagen ID.4 Pro (2024)**: €25,707.73 total TCO
-- Purchase: €48,000 | 0 km
-- Net cost after resale: -€3,891.38
-
-### Sample Detailed Breakdown: Tesla Model 3 Long Range (2021)
-
-\`\`\`
-======================================================================
-Tesla Model 3 Long Range (EV) - 2021 Model
-Condition: USED | Current Mileage: 52,000 km | Purchase Price: €38,000
-======================================================================
-
-Yearly Breakdown:
-Year | Deprec. | Fuel | Electric | Insurance | Maint. | Tax | Total
---------------------------------------------------------------------------------
-  1  | €  3040 | €   0 | €   341 | €    566 | €  520 | € 70 | €  4537
-  2  | €  2447 | €   0 | €   341 | €    527 | €  544 | € 70 | €  3929
-  3  | €  1951 | €   0 | €   341 | €    495 | €  568 | € 70 | €  3425
-  4  | €  1528 | €   0 | €   341 | €    470 | €  592 | € 70 | €  3001
-  5  | €  1161 | €   0 | €   341 | €    452 | €  616 | € 70 | €  2640
---------------------------------------------------------------------------------
-Total 5-Year Cost: €17,532.18
-Average Annual Cost: €3,506.44
-Residual Value: €27,872.57
-\`\`\`
+[See detailed breakdown in results/COMPARE.md](results/COMPARE.md)
 
 ## Key Insights
 
 ### Used vs New
 - **Used EVs (2-3 years old)** typically offer the best value due to lower depreciation
-- **New cars** depreciate 23-25% in the first year
-- **Used cars (2-4 years)** depreciate only 9-12% per year
-- **Older cars (5+ years)** depreciate 3-8% per year
+- **New cars** depreciate 20-25% in the first year
+- **Used cars (2-4 years)** depreciate only 8-12% per year
+- **Older cars (5+ years)** depreciate 3-7% per year
 
-### EV vs PHEV
-- **EVs** have lower running costs (no fuel, less maintenance)
-- **PHEVs** may have lower purchase prices but higher maintenance costs
+### EV vs PHEV vs ICE
+- **EVs** have lowest running costs (no fuel, minimal maintenance)
+- **PHEVs** offer flexibility but higher maintenance than EVs
+- **ICE** vehicles have highest fuel and maintenance costs
 - From 2026, EVs will pay €70-120/year in vehicle tax (mass-based)
-- **PHEVs** continue paying CO2-based tax (€90-100/year typically)
+- **PHEVs/ICE** continue paying CO2-based tax (€90-220/year typically)
 
 ### Premium vs Budget
 - Premium EVs (BMW, Mercedes, Porsche) have higher insurance and depreciation
-- Mid-range EVs (VW ID.4, Kia EV6) offer best balance
+- Mid-range EVs (VW ID.4, Kia EV6, Hyundai Ioniq 6) offer best balance
 - Budget used PHEVs can have excellent TCO if well-maintained
+- Small hybrid ICE cars (Toyota Yaris, Corolla) are most economical in ICE category
 
 ## Cost Components Explained
 
@@ -143,43 +140,66 @@ Residual Value: €27,872.57
 - Largest cost component for new cars
 - Calculated using Finnish market data
 - Age-adjusted rates for used vehicles
+- EVs depreciate faster initially but stabilize
+- ICE vehicles have more predictable depreciation
 
 ### Fuel & Electricity
-- PHEV: 70% electric, 30% gasoline (configurable)
-- EV: 100% electric
-- Based on actual consumption figures
+- **EV**: 100% electric (with real-world consumption factor)
+- **PHEV**: Configurable split (default 70% electric, 30% gasoline)
+- **ICE**: 100% gasoline/diesel (with real-world consumption factor)
+- Based on actual consumption figures with Finnish winter adjustments
 
 ### Insurance
 - Calculated as 1.5% of vehicle value
 - Adjusted by insurance class (1-30)
 - Decreases as vehicle depreciates
+- Premium vehicles have higher insurance costs
 
 ### Maintenance
-- EV: €300/year base cost
-- PHEV: €500/year base cost
+- **EV**: €300/year base cost (no oil changes, fewer parts)
+- **PHEV**: €500/year base cost (dual powertrain complexity)
+- **ICE**: €700/year base cost (oil changes, more wear items)
 - Increases 8% per year of vehicle age
 - Additional €100/year for cars 5+ years old
 
 ### Vehicle Tax
-- **2024-2025**: EVs exempt, PHEVs pay CO2-based
-- **2026+**: EVs pay mass-based tax, PHEVs continue CO2-based with higher rates
+- **2024-2025**: EVs exempt, PHEVs/ICE pay CO2-based
+- **2026+**: EVs pay mass-based tax, PHEVs/ICE continue CO2-based with higher rates
 
 ## Supported Vehicles
 
 The calculator includes examples of:
-- **New Cars (2024)**: Toyota RAV4 PHEV, Tesla Model Y, VW ID.4, VW ID.7, BMW i4, Kia EV6, BMW iX, Mercedes EQE
-- **Used Cars (2019-2022)**: VW Passat GTE, Tesla Model 3, BMW 330e, Audi e-tron, Kia Niro PHEV, Porsche Taycan, Volvo XC60 T8, Jaguar I-PACE, and more
+
+### Electric Vehicles (EVs)
+- **New (2024)**: Tesla Model Y, VW ID.4, VW ID.7, BMW i4, Kia EV6, BMW iX, Mercedes EQE, Hyundai Ioniq 6
+- **Used (2019-2022)**: Tesla Model 3, Audi e-tron, Kia EV6, Porsche Taycan, Jaguar I-PACE
+
+### Plug-in Hybrids (PHEVs)
+- **New (2024)**: Toyota RAV4 PHEV, Volvo XC60 T8, BMW 330e, Mercedes GLE 350 de
+- **Used (2019-2021)**: VW Passat GTE, BMW 330e, Volvo XC60 T8, Mitsubishi Outlander PHEV, Kia Niro PHEV, BMW X5 xDrive45e
+
+### Internal Combustion (ICE)
+- **New (2024)**: Toyota RAV4 Hybrid, VW Tiguan TDI, BMW 320d, Mazda CX-60, Skoda Octavia TDI
+- **Used (2018-2021)**: Toyota Corolla Hybrid, VW Golf, BMW 320d, Skoda Octavia, Toyota Yaris Hybrid, Mazda 3, VW Passat
 
 ## Project Structure
 
 \`\`\`
 ev-tco-calculator-finland/
 ├── src/
-│   ├── tco-calculator.ts    # Main calculator logic
-│   ├── example-usage.ts     # Example vehicles and usage
-│   └── index.ts             # Entry point
+│   ├── data/
+│   │   ├── ev-vehicles.ts       # Electric vehicle database
+│   │   ├── phev-vehicles.ts     # Plug-in hybrid database
+│   │   ├── ice-vehicles.ts      # ICE vehicle database
+│   │   └── index.ts             # Data exports
+│   ├── tco-calculator.ts        # Main calculator logic
+│   ├── example-usage.ts         # Example usage with all vehicles
+│   └── index.ts                 # Entry point
+├── results/
+│   └── COMPARE.md               # Full comparison results
 ├── package.json
 ├── tsconfig.json
+├── generate-readme.sh
 ├── .gitignore
 └── README.md
 \`\`\`
@@ -198,14 +218,55 @@ Run in development mode:
 npm start
 \`\`\`
 
+## Adding Your Own Vehicles
+
+You can easily add vehicles to the appropriate data file:
+
+\`\`\`typescript
+// src/data/ev-vehicles.ts
+export const evVehicles: VehicleSpecs[] = [
+  {
+    name: 'Your EV Model',
+    type: 'EV',
+    purchasePrice: 45000,
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 75,
+    electricRange: 500,
+    electricConsumption: 17.0,
+    insuranceClass: 18,
+    realWorldConsumptionFactor: 1.22, // Optional: override default
+  },
+  // ... more vehicles
+];
+\`\`\`
+
+Or create custom comparisons:
+
+\`\`\`typescript
+import { EVTCOCalculator } from './tco-calculator';
+import { evVehicles, phevVehicles, iceVehicles } from './data';
+
+// Compare only budget options
+const budgetVehicles = [
+  ...evVehicles.filter(v => v.purchasePrice < 40000),
+  ...phevVehicles.filter(v => v.purchasePrice < 35000),
+  ...iceVehicles.filter(v => v.purchasePrice < 25000),
+];
+
+calculator.compareVehicles(budgetVehicles);
+\`\`\`
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. Areas for improvement:
-- Additional vehicle models
+- Additional vehicle models and data
 - More accurate insurance calculations
 - Regional electricity price variations
 - Battery degradation modeling
 - Charging infrastructure costs
+- Import vehicle data from CSV/JSON
+- Web interface for the calculator
 
 ## License
 
@@ -219,6 +280,7 @@ This calculator provides estimates based on average Finnish market conditions. A
 - Regional electricity prices
 - Vehicle condition and maintenance history
 - Market fluctuations
+- Actual real-world consumption (varies by driver and conditions)
 
 Always consult with financial advisors and dealers for specific purchase decisions.
 
@@ -228,6 +290,8 @@ Always consult with financial advisors and dealers for specific purchase decisio
 - Finnish electricity market data (2025)
 - Vehicle depreciation data from Finnish used car markets
 - Insurance class data from Finnish insurance companies
+- Real-world consumption data from Spritmonitor.de and Finnish EV forums
+- WLTP consumption figures from manufacturer specifications
 
 ---
 

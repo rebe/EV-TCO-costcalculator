@@ -1,251 +1,33 @@
-import { EVTCOCalculator, FinlandCosts, VehicleSpecs } from './tco-calculator';
+import { EVTCOCalculator, FinlandCosts } from './tco-calculator';
 
-// Finnish market costs (2024 estimates)
+import { evVehicles } from './data/ev-vehicles';
+import { iceVehicles } from './data/ice-vehicles';
+import { phevVehicles } from './data/phev-vehicles';
+
+// Finnish market costs (2025 actual rates)
 const finlandCosts: FinlandCosts = {
   electricityPricePerKwh: 0.11, // EUR/kWh (6c energy + 5c transfer in Tampere)
   gasolinePrice: 1.85, // EUR/liter
   annualMileage: 20000, // km
-  electricDrivingPercentage: 60, // % for PHEV (typical for Finnish commuters)
+  electricDrivingPercentage: 70, // % for PHEV (0 for ICE, ignored for EV)
+  realWorldElectricConsumptionFactor: 1.22, // 22% higher than WLTP (Finnish winter conditions)
 };
 
-// Example vehicles for Finnish market - Mix of new and used
-const vehicles: VehicleSpecs[] = [
-  // NEW CARS - 2024
-  {
-    name: 'Toyota RAV4 PHEV',
-    type: 'PHEV',
-    purchasePrice: 52000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 18.1,
-    electricRange: 75,
-    fuelConsumption: 6.2,
-    electricConsumption: 18.0,
-    insuranceClass: 18,
-  },
-  {
-    name: 'Tesla Model Y Long Range',
-    type: 'EV',
-    purchasePrice: 55000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 75,
-    electricRange: 533,
-    electricConsumption: 16.9,
-    insuranceClass: 20,
-  },
-  {
-    name: 'Volkswagen ID.4 Pro',
-    type: 'EV',
-    purchasePrice: 48000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 77,
-    electricRange: 520,
-    electricConsumption: 17.5,
-    insuranceClass: 17,
-  },
-  {
-    name: 'Volkswagen ID.7 Pro',
-    type: 'EV',
-    purchasePrice: 58000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 77,
-    electricRange: 621,
-    electricConsumption: 16.3,
-    insuranceClass: 19,
-  },
-  {
-    name: 'BMW i4 eDrive40',
-    type: 'EV',
-    purchasePrice: 68000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 83.9,
-    electricRange: 590,
-    electricConsumption: 18.1,
-    insuranceClass: 23,
-  },
-  {
-    name: 'Kia EV6 Long Range RWD',
-    type: 'EV',
-    purchasePrice: 52000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 77.4,
-    electricRange: 528,
-    electricConsumption: 16.5,
-    insuranceClass: 18,
-  },
-  {
-    name: 'BMW iX xDrive40',
-    type: 'EV',
-    purchasePrice: 85000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 76.6,
-    electricRange: 425,
-    electricConsumption: 19.5,
-    insuranceClass: 25,
-  },
-  {
-    name: 'Mercedes-Benz EQE 350',
-    type: 'EV',
-    purchasePrice: 82000,
-    yearModel: 2024,
-    currentMileage: 0,
-    batteryCapacity: 90.6,
-    electricRange: 590,
-    electricConsumption: 18.7,
-    insuranceClass: 26,
-  },
-
-  // USED CARS - 2022 Models
-  {
-    name: 'Volkswagen ID.7 Pro',
-    type: 'EV',
-    purchasePrice: 42000,
-    yearModel: 2022,
-    currentMileage: 35000,
-    batteryCapacity: 77,
-    electricRange: 615,
-    electricConsumption: 16.5,
-    insuranceClass: 19,
-  },
-  {
-    name: 'BMW i4 eDrive40',
-    type: 'EV',
-    purchasePrice: 48000,
-    yearModel: 2022,
-    currentMileage: 28000,
-    batteryCapacity: 83.9,
-    electricRange: 590,
-    electricConsumption: 18.1,
-    insuranceClass: 23,
-  },
-  {
-    name: 'Kia EV6 Long Range',
-    type: 'EV',
-    purchasePrice: 38000,
-    yearModel: 2022,
-    currentMileage: 32000,
-    batteryCapacity: 77.4,
-    electricRange: 528,
-    electricConsumption: 16.5,
-    insuranceClass: 18,
-  },
-
-  // USED CARS - 2021 Models
-  {
-    name: 'VW Passat GTE',
-    type: 'PHEV',
-    purchasePrice: 28000,
-    yearModel: 2021,
-    currentMileage: 45000,
-    batteryCapacity: 13.0,
-    electricRange: 55,
-    fuelConsumption: 5.8,
-    electricConsumption: 17.0,
-    insuranceClass: 16,
-  },
-  {
-    name: 'Tesla Model 3 Long Range',
-    type: 'EV',
-    purchasePrice: 38000,
-    yearModel: 2021,
-    currentMileage: 52000,
-    batteryCapacity: 75,
-    electricRange: 580,
-    electricConsumption: 15.5,
-    insuranceClass: 19,
-  },
-  {
-    name: 'Audi e-tron 55 quattro',
-    type: 'EV',
-    purchasePrice: 52000,
-    yearModel: 2021,
-    currentMileage: 38000,
-    batteryCapacity: 95,
-    electricRange: 441,
-    electricConsumption: 22.5,
-    insuranceClass: 24,
-  },
-  {
-    name: 'BMW 330e',
-    type: 'PHEV',
-    purchasePrice: 35000,
-    yearModel: 2021,
-    currentMileage: 42000,
-    batteryCapacity: 12.0,
-    electricRange: 60,
-    fuelConsumption: 5.5,
-    electricConsumption: 16.5,
-    insuranceClass: 20,
-  },
-  {
-    name: 'Kia EV6 GT-Line',
-    type: 'EV',
-    purchasePrice: 35000,
-    yearModel: 2021,
-    currentMileage: 48000,
-    batteryCapacity: 77.4,
-    electricRange: 506,
-    electricConsumption: 17.2,
-    insuranceClass: 18,
-  },
-
-  // USED CARS - 2020 Models
-  {
-    name: 'Porsche Taycan 4S',
-    type: 'EV',
-    purchasePrice: 68000,
-    yearModel: 2020,
-    currentMileage: 35000,
-    batteryCapacity: 93.4,
-    electricRange: 463,
-    electricConsumption: 24.8,
-    insuranceClass: 28,
-  },
-  {
-    name: 'Volvo XC60 T8 Recharge',
-    type: 'PHEV',
-    purchasePrice: 42000,
-    yearModel: 2020,
-    currentMileage: 48000,
-    batteryCapacity: 11.6,
-    electricRange: 50,
-    fuelConsumption: 7.0,
-    electricConsumption: 20.0,
-    insuranceClass: 21,
-  },
-
-  // USED CARS - 2019 Models
-  {
-    name: 'Kia Niro PHEV',
-    type: 'PHEV',
-    purchasePrice: 22000,
-    yearModel: 2019,
-    currentMileage: 65000,
-    batteryCapacity: 8.9,
-    electricRange: 58,
-    fuelConsumption: 5.3,
-    electricConsumption: 15.5,
-    insuranceClass: 14,
-  },
-  {
-    name: 'Jaguar I-PACE',
-    type: 'EV',
-    purchasePrice: 45000,
-    yearModel: 2019,
-    currentMileage: 58000,
-    batteryCapacity: 90,
-    electricRange: 470,
-    electricConsumption: 23.0,
-    insuranceClass: 23,
-  },
-];
-
-// Run the comparison
+// Create calculator instance
 const calculator = new EVTCOCalculator(finlandCosts);
-calculator.compareVehicles(vehicles);
+
+// You can compare all vehicles or select specific ones
+const allVehicles = [...evVehicles, ...phevVehicles, ...iceVehicles];
+
+// Or compare specific categories:
+// const selectedVehicles = [...evVehicles]; // Only EVs
+// const selectedVehicles = [...phevVehicles]; // Only PHEVs
+// const selectedVehicles = [...iceVehicles]; // Only ICE
+// const selectedVehicles = [...evVehicles.slice(0, 5), ...phevVehicles.slice(0, 3)]; // Mix
+
+// Run comparison
+calculator.compareVehicles(allVehicles);
+
+// You can also calculate TCO for a single vehicle
+// const singleResult = calculator.calculateTCO(evVehicles[0]);
+// console.log(singleResult);
