@@ -26,6 +26,8 @@ Run the calculator with example vehicles:
 
 \`\`\`bash
 npm start
+#or to file:
+npm start -- --markdown > results/COMPARE.md
 \`\`\`
 
 Or use it in your own TypeScript project:
