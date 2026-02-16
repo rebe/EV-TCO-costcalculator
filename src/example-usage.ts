@@ -6,7 +6,7 @@ const finlandCosts: FinlandCosts = {
   electricityPricePerKwh: 0.11, // EUR/kWh (6c energy + 5c transfer in Tampere)
   gasolinePrice: 1.85, // EUR/liter
   annualMileage: 20000, // km per year
-  electricDrivingPercentage: 70, // % for PHEV (70% electric, 30% fuel)
+  electricDrivingPercentage: 0.4, // % for PHEV (40% electric, 60% fuel)
   realWorldElectricConsumptionFactor: 1.22, // 22% higher than WLTP
 };
 
