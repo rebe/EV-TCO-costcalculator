@@ -11,6 +11,16 @@ interface VehicleSpecs {
   insuranceClass: number;
   condition?: 'new' | 'used';
   realWorldConsumptionFactor?: number;
+  leasing?: LeaseConfig;
+}
+
+interface LeaseConfig {
+  monthlyPayment: number;
+  downPayment?: number;
+  durationMonths: number;
+  includesMaintenance: boolean;
+  includesInsurance: boolean;
+  includesTax: boolean;
 }
 
 interface FinlandCosts {
@@ -19,6 +29,10 @@ interface FinlandCosts {
   annualMileage: number;
   electricDrivingPercentage: number;
   realWorldElectricConsumptionFactor: number;
+  initialCash: number;
+  loanInterestRate: number;
+  investmentReturnRate: number;
+  loanTermYears: number;
 }
 
 interface TCOResult {
@@ -45,6 +59,7 @@ interface YearlyBreakdown {
   insurance: number;
   maintenance: number;
   tax: number;
+  financing: number;
   total: number;
 }
 
@@ -87,25 +102,70 @@ class EVTCOCalculator {
     const condition = vehicleAge === 0 ? 'new' : 'used';
     let remainingValue = vehicle.purchasePrice;
 
+    const isLeased = !!vehicle.leasing;
+    const leaseAnnualCost = isLeased ? ((vehicle.leasing!.monthlyPayment * 12) + ((vehicle.leasing!.downPayment || 0) / (vehicle.leasing!.durationMonths / 12))) : 0;
+
+    let totalLoanAmount = 0;
+    let investedCash = 0;
+    let remainingLoanPrincipal = 0;
+
+    if (isLeased) {
+      const cashUsed = vehicle.leasing!.downPayment || 0;
+      investedCash = Math.max(0, this.finlandCosts.initialCash - cashUsed);
+    } else {
+      const cashUsed = Math.min(this.finlandCosts.initialCash, vehicle.purchasePrice);
+      totalLoanAmount = Math.max(0, vehicle.purchasePrice - this.finlandCosts.initialCash);
+      remainingLoanPrincipal = totalLoanAmount;
+      investedCash = Math.max(0, this.finlandCosts.initialCash - vehicle.purchasePrice);
+    }
+    
+    // Calculate annual principal payment if there's a loan
+    const annualPrincipalPayment = totalLoanAmount > 0 ? totalLoanAmount / this.finlandCosts.loanTermYears : 0;
+
     for (let year = 1; year <= this.YEARS; year++) {
-      const depreciation = this.calculateDepreciation(
-        vehicle.purchasePrice,
-        year,
-        vehicle.type,
-        vehicleAge
-      );
-      remainingValue = vehicle.purchasePrice - this.calculateTotalDepreciation(
-        vehicle.purchasePrice,
-        year,
-        vehicle.type,
-        vehicleAge
-      );
+      let depreciation = 0;
+      let financing = 0;
+
+      if (isLeased) {
+        depreciation = leaseAnnualCost;
+        // Investment yield is a negative cost (savings)
+        financing = -(investedCash * this.finlandCosts.investmentReturnRate);
+        // Compounding investment for next year:
+        investedCash *= (1 + this.finlandCosts.investmentReturnRate);
+      } else {
+        depreciation = this.calculateDepreciation(
+          vehicle.purchasePrice,
+          year,
+          vehicle.type,
+          vehicleAge
+        );
+        remainingValue = vehicle.purchasePrice - this.calculateTotalDepreciation(
+          vehicle.purchasePrice,
+          year,
+          vehicle.type,
+          vehicleAge
+        );
+
+        // Calculate loan interest on current principal
+        let loanInterest = 0;
+        if (remainingLoanPrincipal > 0 && year <= this.finlandCosts.loanTermYears) {
+          loanInterest = remainingLoanPrincipal * this.finlandCosts.loanInterestRate;
+          remainingLoanPrincipal -= annualPrincipalPayment;
+        }
+
+        // Investment yield
+        const investmentReturn = investedCash * this.finlandCosts.investmentReturnRate;
+        financing = loanInterest - investmentReturn;
+
+        // Compounding investment for next year
+        investedCash *= (1 + this.finlandCosts.investmentReturnRate);
+      }
 
       const fuelCost = this.calculateFuelCost(vehicle, year);
       const electricityCost = this.calculateElectricityCost(vehicle, year);
-      const insurance = this.calculateInsurance(vehicle, remainingValue, year);
-      const maintenance = this.calculateMaintenance(vehicle, year, vehicleAge);
-      const tax = this.calculateVehicleTax(vehicle, year);
+      const insurance = (isLeased && vehicle.leasing!.includesInsurance) ? 0 : this.calculateInsurance(vehicle, isLeased ? vehicle.purchasePrice : remainingValue, year);
+      const maintenance = (isLeased && vehicle.leasing!.includesMaintenance) ? 0 : this.calculateMaintenance(vehicle, year, vehicleAge);
+      const tax = (isLeased && vehicle.leasing!.includesTax) ? 0 : this.calculateVehicleTax(vehicle, year);
 
       yearlyBreakdowns.push({
         depreciation,
@@ -114,12 +174,13 @@ class EVTCOCalculator {
         insurance,
         maintenance,
         tax,
-        total: depreciation + fuelCost + electricityCost + insurance + maintenance + tax,
+        financing,
+        total: depreciation + fuelCost + electricityCost + insurance + maintenance + tax + financing,
       });
     }
 
     const totalCost = yearlyBreakdowns.reduce((sum, year) => sum + year.total, 0);
-    const residualValue = vehicle.purchasePrice - this.calculateTotalDepreciation(
+    const residualValue = isLeased ? 0 : vehicle.purchasePrice - this.calculateTotalDepreciation(
       vehicle.purchasePrice,
       this.YEARS,
       vehicle.type,
@@ -346,6 +407,9 @@ class EVTCOCalculator {
     console.log(`Annual Mileage: ${this.finlandCosts.annualMileage} km`);
     console.log(`Electricity Price: €${this.finlandCosts.electricityPricePerKwh}/kWh`);
     console.log(`Gasoline Price: €${this.finlandCosts.gasolinePrice}/liter`);
+    console.log(`Initial Cash: €${this.finlandCosts.initialCash.toLocaleString()}`);
+    console.log(`Loan Interest Rate: ${(this.finlandCosts.loanInterestRate * 100).toFixed(1)}% (over ${this.finlandCosts.loanTermYears} years)`);
+    console.log(`Investment Return Rate: ${(this.finlandCosts.investmentReturnRate * 100).toFixed(1)}%`);
     console.log(`\n⚠️  NOTE: Real-world consumption factors applied:`);
     console.log(`   - EVs: ${(this.DEFAULT_CONSUMPTION_FACTORS.EV * 100 - 100).toFixed(0)}% higher than WLTP (Finnish winter conditions)`);
     console.log(`   - PHEVs: ${(this.DEFAULT_CONSUMPTION_FACTORS.PHEV * 100 - 100).toFixed(0)}% higher than WLTP`);
@@ -368,6 +432,9 @@ class EVTCOCalculator {
     console.log(`- **Annual Mileage**: ${this.finlandCosts.annualMileage.toLocaleString()} km`);
     console.log(`- **Electricity Price**: €${this.finlandCosts.electricityPricePerKwh}/kWh`);
     console.log(`- **Gasoline Price**: €${this.finlandCosts.gasolinePrice}/liter`);
+    console.log(`- **Initial Cash**: €${this.finlandCosts.initialCash.toLocaleString()}`);
+    console.log(`- **Loan Interest Rate**: ${(this.finlandCosts.loanInterestRate * 100).toFixed(1)}% (over ${this.finlandCosts.loanTermYears} years)`);
+    console.log(`- **Investment Return Rate**: ${(this.finlandCosts.investmentReturnRate * 100).toFixed(1)}%`);
     console.log(`- **PHEV Electric Driving**: ${this.finlandCosts.electricDrivingPercentage}%\n`);
 
     console.log('## Real-World Consumption Factors\n');
@@ -390,45 +457,55 @@ class EVTCOCalculator {
   }
 
   private printVehicleResultConsole(result: TCOResult): void {
+    const isLeased = result.residualValue === 0 && result.year1.depreciation > 0 && result.purchasePrice > 0; // Simple heuristic, or we ideally pass 'isLeased' down
+    const leaseText = isLeased ? ' [📝 LEASED]' : '';
+
     console.log(`\n${'='.repeat(70)}`);
-    console.log(`${result.vehicleName} (${result.type}) - ${result.yearModel} Model`);
-    console.log(`Condition: ${result.condition.toUpperCase()} | Current Mileage: ${result.currentMileage.toLocaleString()} km | Purchase Price: €${result.purchasePrice.toLocaleString()}`);
+    console.log(`${result.vehicleName} (${result.type}) - ${result.yearModel} Model${leaseText}`);
+    console.log(`Condition: ${result.condition.toUpperCase()} | Current Mileage: ${result.currentMileage.toLocaleString()} km | ${isLeased ? 'List' : 'Purchase'} Price: €${result.purchasePrice.toLocaleString()}`);
     console.log('='.repeat(70));
 
     console.log('\nYearly Breakdown:');
     console.log(
-      'Year | Deprec. | Fuel | Electric | Insurance | Maint. | Tax | Total'
+      'Year | Deprec. | Fuel | Electric | Insurance | Maint. | Tax | Financ. | Total'
     );
-    console.log('-'.repeat(80));
+    console.log('-'.repeat(88));
 
     [result.year1, result.year2, result.year3, result.year4, result.year5].forEach(
       (year, index) => {
         console.log(
-          `  ${index + 1}  | €${year.depreciation.toFixed(0).padStart(6)} | €${year.fuelCost.toFixed(0).padStart(4)} | €${year.electricityCost.toFixed(0).padStart(6)} | €${year.insurance.toFixed(0).padStart(7)} | €${year.maintenance.toFixed(0).padStart(5)} | €${year.tax.toFixed(0).padStart(3)} | €${year.total.toFixed(0).padStart(6)}`
+          `  ${index + 1}  | €${year.depreciation.toFixed(0).padStart(6)} | €${year.fuelCost.toFixed(0).padStart(4)} | €${year.electricityCost.toFixed(0).padStart(6)} | €${year.insurance.toFixed(0).padStart(7)} | €${year.maintenance.toFixed(0).padStart(5)} | €${year.tax.toFixed(0).padStart(3)} | €${year.financing.toFixed(0).padStart(6)} | €${year.total.toFixed(0).padStart(6)}`
         );
       }
     );
 
-    console.log('-'.repeat(80));
+    console.log('-'.repeat(88));
     console.log(`Total 5-Year Cost: €${result.totalCost.toFixed(2)}`);
     console.log(`Average Annual Cost: €${result.averageAnnualCost.toFixed(2)}`);
-    console.log(`Residual Value: €${result.residualValue.toFixed(2)}`);
+    if (!isLeased) {
+      console.log(`Residual Value: €${result.residualValue.toFixed(2)}`);
+      console.log(`Net Cost (after resale): €${(result.totalCost - result.residualValue).toFixed(2)}`);
+    } else {
+      console.log(`Residual Value: N/A (Returned at end of lease)`);
+    }
   }
 
   private printVehicleResultMarkdown(result: TCOResult, index: number): void {
+    const isLeased = result.residualValue === 0 && result.year1.depreciation > 0 && result.purchasePrice > 0;
     const typeEmoji = result.type === 'EV' ? '⚡' : result.type === 'PHEV' ? '🔌' : '⛽';
     const conditionEmoji = result.condition === 'new' ? '🆕' : '🔄';
+    const leaseTag = isLeased ? ' 📝 **[LEASED]**' : '';
 
-    console.log(`### ${index}. ${conditionEmoji} ${typeEmoji} ${result.vehicleName} (${result.yearModel})\n`);
-    console.log(`**Type**: ${result.type} | **Condition**: ${result.condition} | **Mileage**: ${result.currentMileage.toLocaleString()} km | **Price**: €${result.purchasePrice.toLocaleString()}\n`);
+    console.log(`### ${index}. ${conditionEmoji} ${typeEmoji} ${result.vehicleName} (${result.yearModel})${leaseTag}\n`);
+    console.log(`**Type**: ${result.type} | **Condition**: ${result.condition} | **Mileage**: ${result.currentMileage.toLocaleString()} km | **${isLeased ? 'List' : 'Purchase'} Price**: €${result.purchasePrice.toLocaleString()}\n`);
 
-    console.log('| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | **Total** |');
-    console.log('|------|--------------|------|-------------|-----------|-------------|-----|-----------|');
+    console.log('| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |');
+    console.log('|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|');
 
     [result.year1, result.year2, result.year3, result.year4, result.year5].forEach(
       (year, idx) => {
         console.log(
-          `| ${idx + 1} | €${year.depreciation.toFixed(0)} | €${year.fuelCost.toFixed(0)} | €${year.electricityCost.toFixed(0)} | €${year.insurance.toFixed(0)} | €${year.maintenance.toFixed(0)} | €${year.tax.toFixed(0)} | **€${year.total.toFixed(0)}** |`
+          `| ${idx + 1} | €${year.depreciation.toFixed(0)} | €${year.fuelCost.toFixed(0)} | €${year.electricityCost.toFixed(0)} | €${year.insurance.toFixed(0)} | €${year.maintenance.toFixed(0)} | €${year.tax.toFixed(0)} | €${year.financing.toFixed(0)} | **€${year.total.toFixed(0)}** |`
         );
       }
     );
@@ -437,8 +514,13 @@ class EVTCOCalculator {
     console.log(`**5-Year Summary:**`);
     console.log(`- Total Cost: **€${result.totalCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}**`);
     console.log(`- Average Annual Cost: €${result.averageAnnualCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`);
-    console.log(`- Residual Value: €${result.residualValue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`);
-    console.log(`- Net Cost (after resale): €${(result.totalCost - result.residualValue).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}\n`);
+    
+    if (!isLeased) {
+      console.log(`- Residual Value: €${result.residualValue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`);
+      console.log(`- Net Cost (after resale): €${(result.totalCost - result.residualValue).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}\n`);
+    } else {
+      console.log(`- Residual Value: N/A (Returned at end of lease)\n`);
+    }
   }
 
   private printComparisonConsole(results: TCOResult[]): void {
@@ -461,8 +543,9 @@ class EVTCOCalculator {
     console.log('\nNet Cost After Resale (Total Cost - Residual Value):');
     results.forEach((result) => {
       const netCost = result.totalCost - result.residualValue;
+      const isLeased = result.residualValue === 0 && result.purchasePrice > 0;
       console.log(
-        `${result.vehicleName} (${result.yearModel}): €${netCost.toFixed(2)} (Residual: €${result.residualValue.toFixed(2)})`
+        `${result.vehicleName} (${result.yearModel}): €${netCost.toFixed(2)}${isLeased ? ' (Returned)' : ` (Residual: €${result.residualValue.toFixed(2)})`}`
       );
     });
 
@@ -525,8 +608,9 @@ class EVTCOCalculator {
 
     results.forEach((result) => {
       const netCost = result.totalCost - result.residualValue;
+      const isLeased = result.residualValue === 0 && result.purchasePrice > 0;
       console.log(
-        `| ${result.vehicleName} | ${result.yearModel} | €${result.totalCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} | €${result.residualValue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} | €${netCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} |`
+        `| ${result.vehicleName} | ${result.yearModel} | €${result.totalCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} | ${isLeased ? 'Returned' : `€${result.residualValue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`} | €${netCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} |`
       );
     });
 

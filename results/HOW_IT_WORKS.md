@@ -90,3 +90,49 @@ Normal wear and tear
 Stable used car market
 The depreciation model is accurate
 In reality, you're still spending money to own and operate the vehicle - the negative net cost just shows that the vehicle retains enough value that your total ownership cost is very low compared to the purchase price.
+
+---
+
+## Leasing vs Buying: A Financial Comparison
+Let's look at the financial difference between **leasing** and **buying** the same car: the **Volkswagen ID.7 Pro (2024)**. 
+
+### Scenario Parameters
+- **Initial Cash on Hand**: €20,000 (e.g., from selling an old car)
+- **Car List/Purchase Price**: €58,000
+- **Loan Interest Rate**: 6.0%
+- **Investment Return Rate**: 4.0%
+
+### Option A: Buying the VW ID.7 Pro (2024)
+- **Capital Used**: You put your entire €20,000 towards the purchase.
+- **Loan Required**: €38,000 loan at 6.0% interest.
+- **Investment Return**: €0 (all cash was spent on the car).
+
+**5-Year Costs:**
+- Fuel / Electricity: €2,185
+- Insurance: €3,450
+- Maintenance: €2,280
+- Tax: €350
+- Loan Interest (5 years): €6,840
+- Depreciation: €22,234 (Value drops from €58k to €35.7k)
+
+**Total 5-Year Ownership Cost**: **€37,344**  
+*(Note: Your Net Cost after reselling is very low, but out-of-pocket you've lost €37k to depreciation, interest, and running costs).*
+
+### Option B: Leasing the VW ID.7 Pro Elegance
+- **Lease Terms**: €792 / month, €0 down. Includes maintenance.
+- **Capital Used**: €0 initial cash.
+- **Loan Required**: €0.
+- **Investment Return**: Because you didn't buy the car, your €20,000 stays in the bank and earns 4% compounded annually. 
+
+**5-Year Costs:**
+- Lease Payments (€792 * 60): €47,520
+- Electricity: €2,185
+- Insurance: €4,700
+- Maintenance: €0 (included in lease)
+- Tax: €350
+- Finance Income: **-€4,333** (Your €20k earned 4% interest over 5 years!)
+
+**Total 5-Year Lease Cost**: **€50,424**
+
+### The Verdict
+While leasing the ID.7 theoretically costs more total cash flow over a 5-year period compared to an optimistic resale value on an owned ID.7 (€50k vs €37k), the TCO difference is significantly narrowed because **keeping your cash invested** offsets a massive chunk of the car's cost. Without accounting for the 4% investment yield, the lease would have appeared much worse (~€55k). By tracking capital opportunity cost, the calculator gives you a true, balanced financial comparison between locking up your equity or paying for the certainty of a lease!

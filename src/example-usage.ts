@@ -8,6 +8,10 @@ const finlandCosts: FinlandCosts = {
   annualMileage: 20000, // km per year
   electricDrivingPercentage: 0.4, // % for PHEV (40% electric, 60% fuel)
   realWorldElectricConsumptionFactor: 1.22, // 22% higher than WLTP
+  initialCash: 20000, // EUR available from old car
+  loanInterestRate: 0.06, // 6.0% APR
+  investmentReturnRate: 0.04, // 4.0% return on invested cash
+  loanTermYears: 5,
 };
 
 const calculator = new EVTCOCalculator(finlandCosts);

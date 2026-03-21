@@ -245,4 +245,60 @@ export const evVehicles: VehicleSpecs[] = [
     insuranceClass: 22,
     realWorldConsumptionFactor: 1.30, // Older EV, less efficient
   },
+
+  // LEASED EVs
+  {
+    name: 'Polestar 4 Long Range Single Motor (Leased)',
+    type: 'EV',
+    purchasePrice: 68000, // List price mostly for reference/insurance
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 94,
+    electricRange: 620,
+    electricConsumption: 18.5,
+    insuranceClass: 22,
+    leasing: {
+      monthlyPayment: 705,
+      durationMonths: 48,
+      includesMaintenance: true,
+      includesInsurance: false,
+      includesTax: false,
+    }
+  },
+  {
+    name: 'Volkswagen ID.7 Pro Elegance (Leased)',
+    type: 'EV',
+    purchasePrice: 58000, // List price mostly for reference/insurance
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 77,
+    electricRange: 621,
+    electricConsumption: 16.3,
+    insuranceClass: 19,
+    leasing: {
+      monthlyPayment: 792,
+      durationMonths: 48,
+      includesMaintenance: true,
+      includesInsurance: false,
+      includesTax: false,
+    }
+  },
+  {
+    name: 'Volkswagen ID.7 GTX 4MOTION (Leased)', // Added 4WD as requested
+    type: 'EV',
+    purchasePrice: 65000, 
+    yearModel: 2024,
+    currentMileage: 0,
+    batteryCapacity: 86,
+    electricRange: 580,
+    electricConsumption: 17.5,
+    insuranceClass: 21,
+    leasing: {
+      monthlyPayment: 859, // Guessing pricing for GTX, but standard 4MOTION ID.7 could be placed here
+      durationMonths: 48,
+      includesMaintenance: true,
+      includesInsurance: false,
+      includesTax: false,
+    }
+  },
 ];

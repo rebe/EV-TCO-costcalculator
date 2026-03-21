@@ -4,7 +4,9 @@ A comprehensive TypeScript-based calculator for comparing the Total Cost of Owne
 
 ## Features
 
-- **Comprehensive TCO Analysis**: Calculates depreciation, fuel costs, electricity costs, insurance, maintenance, and vehicle tax
+- **Comprehensive TCO Analysis**: Calculates depreciation, fuel costs, electricity costs, insurance, maintenance, vehicle tax, **and capital financing**.
+- **Financial Opportunity Cost**: Calculates loan interest for bought cars and investment yield (compounding interest) for unused initial capital.
+- **Leasing vs Buying**: Incorporates private leasing configurations to effectively compare leasing against traditional vehicle purchases.
 - **Multi-Vehicle Type Support**: Compare EVs, PHEVs, and ICE vehicles side-by-side
 - **New & Used Vehicle Support**: Compares both new and used vehicles with age-adjusted depreciation rates
 - **2026 Tax Reform Compliance**: Implements the new Finnish vehicle tax system for EVs (mass-based) starting in 2026
@@ -26,8 +28,6 @@ Run the calculator with example vehicles:
 
 \`\`\`bash
 npm start
-#or to file:
-npm start -- --markdown > results/COMPARE.md
 \`\`\`
 
 Or use it in your own TypeScript project:
@@ -38,9 +38,13 @@ import { EVTCOCalculator, VehicleSpecs, FinlandCosts } from './tco-calculator';
 const finlandCosts: FinlandCosts = {
   electricityPricePerKwh: 0.11, // EUR/kWh (6c energy + 5c transfer)
   gasolinePrice: 1.85, // EUR/liter
-  annualMileage: 15000, // km
-  electricDrivingPercentage: 70, // % for PHEV (0 for ICE)
+  annualMileage: 20000, // km
+  electricDrivingPercentage: 40, // % for PHEV (0 for ICE)
   realWorldElectricConsumptionFactor: 1.22, // 22% higher than WLTP
+  initialCash: 20000, // EUR available from old car
+  loanInterestRate: 0.06, // 6.0% APR
+  investmentReturnRate: 0.04, // 4.0% return on invested cash
+  loanTermYears: 5,
 };
 
 const vehicle: VehicleSpecs = {
@@ -103,19 +107,16 @@ The full comparison includes 30+ vehicles across all categories with detailed ye
 
 **Top 5 Best TCO (5-Year Total Cost):**
 
-1. 🔄 🔌 **Kia Niro PHEV (2019)**: €16,315.83 ⭐ BEST
-2. 🔄 ⚡ **Kia EV6 GT-Line (2021)**: €17,140.38
-3. 🔄 ⚡ **Tesla Model 3 Long Range (2021)**: €17,953.76
-4. 🔄 🔌 **VW Passat GTE (2021)**: €18,111.39
-5. 🔄 🔌 **Mitsubishi Outlander PHEV (2020)**: €19,094.22
+1. 🔄 ⛽ **Toyota Yaris Hybrid (2019)**: €19,156.96 ⭐ BEST
+2. 🔄 ⚡ **Kia EV6 GT-Line (2021)**: €19,840.38
+3. 🔄 ⚡ **Polestar 2 Long Range (2020)**: €20,245.42
+4. 🔄 ⚡ **Tesla Model 3 Long Range (2021)**: €21,193.76
+5. 🔄 ⛽ **Toyota Corolla Hybrid (2021)**: €22,459.24
 
 **Best by Category:**
-- ⚡ **Best EV**: Kia EV6 GT-Line (2021) - €17,140.38
-- 🔌 **Best PHEV**: Kia Niro PHEV (2019) - €16,315.83
-- ⛽ **Best ICE**: Toyota Yaris Hybrid (2019) - €20,240.22
-
-**Best New Car:**
-- 🆕 **Volkswagen ID.4 Pro (2024)**: €26,131.23
+- ⚡ **Best EV**: Kia EV6 GT-Line (2021) - €19,840.38
+- 🔌 **Best PHEV**: Kia Niro PHEV (2019) - €22,531.80
+- ⛽ **Best ICE**: Toyota Yaris Hybrid (2019) - €19,156.96
 
 [See detailed breakdown in results/COMPARE.md](results/COMPARE.md)
 
@@ -167,6 +168,12 @@ The full comparison includes 30+ vehicles across all categories with detailed ye
 - **ICE**: €700/year base cost (oil changes, more wear items)
 - Increases 8% per year of vehicle age
 - Additional €100/year for cars 5+ years old
+- Zero if a private lease contract includes maintenance
+
+### Financing & Opportunity Cost
+- **Initial Cash**: Split across down payment and capital investment.
+- **Loan**: Any required loan amount is amortized at the specific `loanInterestRate`.
+- **Investment Return**: Any unused `initialCash` generates an annual compounding return (`investmentReturnRate`), rewarding options that tie up less initial capital such as vehicle leasing.
 
 ### Vehicle Tax
 - **2024-2025**: EVs exempt, PHEVs/ICE pay CO2-based
@@ -221,7 +228,9 @@ npm run build
 Run in development mode:
 
 \`\`\`bash
-npm start
+npm start'
+or to file:
+npm start -- --markdown > results/COMPARE.md
 \`\`\`
 
 ## Adding Your Own Vehicles

@@ -7,6 +7,10 @@ const finlandCosts: FinlandCosts = {
   annualMileage: 15000,
   electricDrivingPercentage: 80, // High electric usage for PHEV
   realWorldElectricConsumptionFactor: 1.22,
+  initialCash: 15000, // Slightly lower initial cash for budget buyers
+  loanInterestRate: 0.06,
+  investmentReturnRate: 0.04,
+  loanTermYears: 5,
 };
 
 const calculator = new EVTCOCalculator(finlandCosts);
