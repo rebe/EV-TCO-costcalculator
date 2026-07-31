@@ -16,7 +16,6 @@
 - **PHEVs**: 25% higher than WLTP
 - **ICE**: 15% higher than WLTP
 
-> **Note**: From 2026, EVs will pay vehicle tax based on mass (€3.70/100kg above 1400kg). PHEVs/ICE continue CO2-based taxation with potentially higher rates.
 
 ---
 
@@ -24,385 +23,576 @@
 
 ### 1. 🔄 ⚡ Tesla Model Y Long Range (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €55,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 75 kWh | **Range**: 533 km | **Purchase Price**: €49,900
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 250 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 854L
+- ℹ️ **Notes**: Market benchmark for cargo (854L total) & efficiency. Battery pre-heater via nav & app.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €6600 | €0 | €454 | €799 | €348 | €70 | €2100 | **€10370** |
-| 2 | €4840 | €0 | €454 | €719 | €372 | €70 | €1680 | **€8134** |
-| 3 | €3920 | €0 | €454 | €654 | €496 | €70 | €1260 | **€6854** |
-| 4 | €3171 | €0 | €454 | €602 | €520 | €70 | €840 | **€5656** |
-| 5 | €2553 | €0 | €454 | €560 | €544 | €70 | €420 | **€4600** |
+| 1 | €5988 | €0 | €454 | €725 | €348 | €70 | €1794 | **€9378** |
+| 2 | €4391 | €0 | €454 | €652 | €372 | €70 | €1435 | **€7374** |
+| 3 | €3557 | €0 | €454 | €593 | €496 | €70 | €1076 | **€6246** |
+| 4 | €2877 | €0 | €454 | €546 | €520 | €70 | €718 | **€5184** |
+| 5 | €2316 | €0 | €454 | €508 | €544 | €70 | €359 | **€4250** |
 
 **5-Year Summary:**
-- Total Cost: **€35,614.77**
-- Average Annual Cost: €7,122.95
-- Residual Value: €33,915.64
-- Net Cost (after resale): €1,699.13
+- Total Cost: **€32,432.64**
+- Average Annual Cost: €6,486.53
+- Residual Value: €30,770.74
+- Net Cost (after resale): €1,661.90
 
-### 2. 🔄 ⚡ Volkswagen ID.4 Pro (2024)
+### 2. 🔄 ⚡ Tesla Model Y RWD (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €48,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 60 kWh | **Range**: 455 km | **Purchase Price**: €44,500
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 170 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 854L
+- ℹ️ **Notes**: Entry Model Y with durable LFP battery, top cargo & battery pre-heating.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €5760 | €0 | €470 | €659 | €348 | €70 | €1680 | **€8987** |
-| 2 | €4224 | €0 | €470 | €593 | €372 | €70 | €1344 | **€7073** |
-| 3 | €3421 | €0 | €470 | €540 | €496 | €70 | €1008 | **€6005** |
-| 4 | €2768 | €0 | €470 | €497 | €520 | €70 | €672 | **€4996** |
-| 5 | €2228 | €0 | €470 | €462 | €544 | €70 | €336 | **€4110** |
+| 1 | €5340 | €0 | €421 | €634 | €348 | €67 | €1470 | **€8280** |
+| 2 | €3916 | €0 | €421 | €571 | €372 | €67 | €1176 | **€6523** |
+| 3 | €3172 | €0 | €421 | €520 | €496 | €67 | €882 | **€5558** |
+| 4 | €2566 | €0 | €421 | €478 | €520 | €67 | €588 | **€4640** |
+| 5 | €2065 | €0 | €421 | €445 | €544 | €67 | €294 | **€3836** |
 
 **5-Year Summary:**
-- Total Cost: **€31,171.23**
-- Average Annual Cost: €6,234.25
-- Residual Value: €29,599.11
-- Net Cost (after resale): €1,572.12
+- Total Cost: **€28,836.61**
+- Average Annual Cost: €5,767.32
+- Residual Value: €27,440.84
+- Net Cost (after resale): €1,395.77
 
 ### 3. 🔄 ⚡ Volkswagen ID.7 Pro (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €58,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77 kWh | **Range**: 621 km | **Purchase Price**: €54,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 532L
+- ℹ️ **Notes**: Best-in-class rear legroom (>1m). Software 4.0 includes manual & automatic battery pre-heating button.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €6960 | €0 | €437 | €827 | €348 | €70 | €2280 | **€10923** |
-| 2 | €5104 | €0 | €437 | €744 | €372 | €70 | €1824 | **€8552** |
-| 3 | €4134 | €0 | €437 | €677 | €496 | €70 | €1368 | **€7183** |
-| 4 | €3344 | €0 | €437 | €623 | €520 | €70 | €912 | **€5907** |
-| 5 | €2692 | €0 | €437 | €579 | €544 | €70 | €456 | **€4779** |
+| 1 | €6480 | €0 | €437 | €770 | €348 | €70 | €2040 | **€10146** |
+| 2 | €4752 | €0 | €437 | €693 | €372 | €70 | €1632 | **€7957** |
+| 3 | €3849 | €0 | €437 | €630 | €496 | €70 | €1224 | **€6707** |
+| 4 | €3114 | €0 | €437 | €580 | €520 | €70 | €816 | **€5537** |
+| 5 | €2506 | €0 | €437 | €539 | €544 | €70 | €408 | **€4506** |
 
 **5-Year Summary:**
-- Total Cost: **€37,344.41**
-- Average Annual Cost: €7,468.88
-- Residual Value: €35,765.59
-- Net Cost (after resale): €1,578.82
-
-### 4. 🔄 ⚡ BMW i4 eDrive40 (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €68,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €8160 | €0 | €486 | €1041 | €348 | €72 | €2880 | **€12987** |
-| 2 | €5984 | €0 | €486 | €937 | €372 | €72 | €2304 | **€10155** |
-| 3 | €4847 | €0 | €486 | €853 | €496 | €72 | €1728 | **€8482** |
-| 4 | €3921 | €0 | €486 | €785 | €520 | €72 | €1152 | **€6935** |
-| 5 | €3156 | €0 | €486 | €730 | €544 | €72 | €576 | **€5564** |
-
-**5-Year Summary:**
-- Total Cost: **€44,121.75**
-- Average Annual Cost: €8,824.35
-- Residual Value: €41,932.07
-- Net Cost (after resale): €2,189.69
-
-### 5. 🔄 ⚡ Kia EV6 Long Range RWD (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €52,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €6240 | €0 | €443 | €728 | €348 | €70 | €1920 | **€9749** |
-| 2 | €4576 | €0 | €443 | €655 | €372 | €70 | €1536 | **€7652** |
-| 3 | €3707 | €0 | €443 | €596 | €496 | €70 | €1152 | **€6464** |
-| 4 | €2998 | €0 | €443 | €548 | €520 | €70 | €768 | **€5348** |
-| 5 | €2414 | €0 | €443 | €510 | €544 | €70 | €384 | **€4365** |
-
-**5-Year Summary:**
-- Total Cost: **€33,577.33**
-- Average Annual Cost: €6,715.47
-- Residual Value: €32,065.70
-- Net Cost (after resale): €1,511.63
-
-### 6. 🔄 ⚡ BMW iX xDrive40 (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €85,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €10200 | €0 | €523 | €1346 | €348 | €70 | €3900 | **€16388** |
-| 2 | €7480 | €0 | €523 | €1212 | €372 | €70 | €3120 | **€12777** |
-| 3 | €6059 | €0 | €523 | €1103 | €496 | €70 | €2340 | **€10591** |
-| 4 | €4901 | €0 | €523 | €1014 | €520 | €70 | €1560 | **€8589** |
-| 5 | €3945 | €0 | €523 | €943 | €544 | €70 | €780 | **€6806** |
-
-**5-Year Summary:**
-- Total Cost: **€55,152.11**
-- Average Annual Cost: €11,030.42
-- Residual Value: €52,415.08
-- Net Cost (after resale): €2,737.03
-
-### 7. 🔄 ⚡ Mercedes-Benz EQE 350 (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €82,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €9840 | €0 | €502 | €1321 | €348 | €73 | €3720 | **€15804** |
-| 2 | €7216 | €0 | €502 | €1188 | €372 | €73 | €2976 | **€12328** |
-| 3 | €5845 | €0 | €502 | €1082 | €496 | €73 | €2232 | **€10230** |
-| 4 | €4728 | €0 | €502 | €995 | €520 | €73 | €1488 | **€8306** |
-| 5 | €3806 | €0 | €502 | €925 | €544 | €73 | €744 | **€6595** |
-
-**5-Year Summary:**
-- Total Cost: **€53,262.27**
-- Average Annual Cost: €10,652.45
-- Residual Value: €50,565.14
-- Net Cost (after resale): €2,697.13
-
-### 8. 🔄 ⚡ Hyundai Ioniq 6 Long Range (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €52,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €6240 | €0 | €371 | €728 | €348 | €70 | €1920 | **€9677** |
-| 2 | €4576 | €0 | €371 | €655 | €372 | €70 | €1536 | **€7581** |
-| 3 | €3707 | €0 | €371 | €596 | €496 | €70 | €1152 | **€6392** |
-| 4 | €2998 | €0 | €371 | €548 | €520 | €70 | €768 | **€5276** |
-| 5 | €2414 | €0 | €371 | €510 | €544 | €70 | €384 | **€4293** |
-
-**5-Year Summary:**
-- Total Cost: **€33,219.17**
-- Average Annual Cost: €6,643.83
-- Residual Value: €32,065.70
-- Net Cost (after resale): €1,153.47
-
-### 9. 🔄 ⚡ Polestar 2 Long Range Single Motor (2024)
-
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €54,000
-
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €6480 | €0 | €432 | €784 | €348 | €71 | €2040 | **€10155** |
-| 2 | €4752 | €0 | €432 | €706 | €372 | €71 | €1632 | **€7964** |
-| 3 | €3849 | €0 | €432 | €642 | €496 | €71 | €1224 | **€6714** |
-| 4 | €3114 | €0 | €432 | €591 | €520 | €71 | €816 | **€5543** |
-| 5 | €2506 | €0 | €432 | €549 | €544 | €71 | €408 | **€4511** |
-
-**5-Year Summary:**
-- Total Cost: **€34,886.79**
-- Average Annual Cost: €6,977.36
+- Total Cost: **€34,853.03**
+- Average Annual Cost: €6,970.61
 - Residual Value: €33,298.99
-- Net Cost (after resale): €1,587.80
+- Net Cost (after resale): €1,554.03
 
-### 10. 🔄 ⚡ Polestar 4 Long Range Single Motor (2024)
+### 4. 🔄 ⚡ Volkswagen ID.7 Tourer Pro (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €68,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77 kWh | **Range**: 605 km | **Purchase Price**: €55,000
 
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €8160 | €0 | €497 | €1023 | €348 | €74 | €2880 | **€12982** |
-| 2 | €5984 | €0 | €497 | €921 | €372 | €74 | €2304 | **€10152** |
-| 3 | €4847 | €0 | €497 | €838 | €496 | €74 | €1728 | **€8480** |
-| 4 | €3921 | €0 | €497 | €771 | €520 | €74 | €1152 | **€6934** |
-| 5 | €3156 | €0 | €497 | €717 | €544 | €74 | €576 | **€5564** |
-
-**5-Year Summary:**
-- Total Cost: **€44,111.73**
-- Average Annual Cost: €8,822.35
-- Residual Value: €41,932.07
-- Net Cost (after resale): €2,179.66
-
-### 11. 🔄 ⚡ Volkswagen ID.7 Pro (2022)
-
-**Type**: EV | **Condition**: used | **Mileage**: 35,000 km | **Purchase Price**: €42,000
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 605L
+- ℹ️ **Notes**: Electric estate car with huge 605L boot, massive legroom & standard pre-heating button.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €5040 | €0 | €443 | €599 | €496 | €70 | €1320 | **€7968** |
-| 2 | €3696 | €0 | €443 | €539 | €520 | €70 | €1056 | **€6324** |
-| 3 | €2994 | €0 | €443 | €490 | €544 | €70 | €792 | **€5333** |
-| 4 | €2422 | €0 | €443 | €451 | €568 | €70 | €528 | **€4482** |
-| 5 | €1949 | €0 | €443 | €420 | €592 | €70 | €264 | **€3738** |
+| 1 | €6600 | €0 | €446 | €784 | €348 | €70 | €2100 | **€10348** |
+| 2 | €4840 | €0 | €446 | €706 | €372 | €70 | €1680 | **€8114** |
+| 3 | €3920 | €0 | €446 | €642 | €496 | €70 | €1260 | **€6834** |
+| 4 | €3171 | €0 | €446 | €591 | €520 | €70 | €840 | **€5638** |
+| 5 | €2553 | €0 | €446 | €549 | €544 | €70 | €420 | **€4582** |
 
 **5-Year Summary:**
-- Total Cost: **€27,845.72**
-- Average Annual Cost: €5,569.14
-- Residual Value: €25,899.22
-- Net Cost (after resale): €1,946.51
+- Total Cost: **€35,516.13**
+- Average Annual Cost: €7,103.23
+- Residual Value: €33,915.64
+- Net Cost (after resale): €1,600.49
 
-### 12. 🔄 ⚡ BMW i4 eDrive40 (2022)
+### 5. 🔄 ⚡ Skoda Enyaq 85 (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 28,000 km | **Purchase Price**: €48,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77 kWh | **Range**: 565 km | **Purchase Price**: €48,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 585L
+- ℹ️ **Notes**: Very spacious family SUV with 585L boot. 85-series adds manual & nav battery pre-heating.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €5760 | €0 | €486 | €735 | €496 | €72 | €1680 | **€9229** |
-| 2 | €4224 | €0 | €486 | €661 | €520 | €72 | €1344 | **€7307** |
-| 3 | €3421 | €0 | €486 | €602 | €544 | €72 | €1008 | **€6133** |
-| 4 | €2768 | €0 | €486 | €554 | €568 | €72 | €672 | **€5119** |
-| 5 | €2228 | €0 | €486 | €515 | €592 | €72 | €336 | **€4229** |
+| 1 | €5760 | €0 | €424 | €672 | €348 | €70 | €1680 | **€8954** |
+| 2 | €4224 | €0 | €424 | €604 | €372 | €70 | €1344 | **€7039** |
+| 3 | €3421 | €0 | €424 | €550 | €496 | €70 | €1008 | **€5970** |
+| 4 | €2768 | €0 | €424 | €506 | €520 | €70 | €672 | **€4960** |
+| 5 | €2228 | €0 | €424 | €471 | €544 | €70 | €336 | **€4073** |
 
 **5-Year Summary:**
-- Total Cost: **€32,016.71**
-- Average Annual Cost: €6,403.34
+- Total Cost: **€30,995.97**
+- Average Annual Cost: €6,199.19
 - Residual Value: €29,599.11
-- Net Cost (after resale): €2,417.60
+- Net Cost (after resale): €1,396.87
 
-### 13. 🔄 ⚡ Kia EV6 Long Range (2022)
+### 6. 🔄 ⚡ Hyundai Ioniq 5 Long Range RWD (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 32,000 km | **Purchase Price**: €38,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 84 kWh | **Range**: 570 km | **Purchase Price**: €49,000
 
-| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
-|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €4560 | €0 | €443 | €532 | €496 | €70 | €1080 | **€7181** |
-| 2 | €3344 | €0 | €443 | €479 | €520 | €70 | €864 | **€5720** |
-| 3 | €2709 | €0 | €443 | €435 | €544 | €70 | €648 | **€4849** |
-| 4 | €2191 | €0 | €443 | €401 | €568 | €70 | €432 | **€4105** |
-| 5 | €1764 | €0 | €443 | €373 | €592 | €70 | €216 | **€3458** |
-
-**5-Year Summary:**
-- Total Cost: **€25,312.92**
-- Average Annual Cost: €5,062.58
-- Residual Value: €23,432.63
-- Net Cost (after resale): €1,880.30
-
-### 14. 🔄 ⚡ Polestar 2 Long Range Single Motor (2022)
-
-**Type**: EV | **Condition**: used | **Mileage**: 38,000 km | **Purchase Price**: €38,000
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 220 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 527L
+- ℹ️ **Notes**: 800V ultra-fast charging (10-80% in 18 min). 3.0m wheelbase with sliding rear seats.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €4560 | €0 | €451 | €552 | €496 | €71 | €1080 | **€7209** |
-| 2 | €3344 | €0 | €451 | €497 | €520 | €71 | €864 | **€5746** |
-| 3 | €2709 | €0 | €451 | €452 | €544 | €71 | €648 | **€4874** |
-| 4 | €2191 | €0 | €451 | €416 | €568 | €71 | €432 | **€4128** |
-| 5 | €1764 | €0 | €451 | €387 | €592 | €71 | €216 | **€3480** |
+| 1 | €5880 | €0 | €429 | €686 | €348 | €72 | €1740 | **€9155** |
+| 2 | €4312 | €0 | €429 | €617 | €372 | €72 | €1392 | **€7194** |
+| 3 | €3493 | €0 | €429 | €562 | €496 | €72 | €1044 | **€6096** |
+| 4 | €2825 | €0 | €429 | €517 | €520 | €72 | €696 | **€5059** |
+| 5 | €2274 | €0 | €429 | €480 | €544 | €72 | €348 | **€4148** |
 
 **5-Year Summary:**
-- Total Cost: **€25,437.58**
-- Average Annual Cost: €5,087.52
-- Residual Value: €23,432.63
-- Net Cost (after resale): €2,004.95
+- Total Cost: **€31,652.33**
+- Average Annual Cost: €6,330.47
+- Residual Value: €30,215.75
+- Net Cost (after resale): €1,436.57
 
-### 15. 🔄 ⚡ Tesla Model 3 Long Range (2021)
+### 7. 🔄 ⚡ Kia EV6 Long Range RWD (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 52,000 km | **Purchase Price**: €38,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77.4 kWh | **Range**: 528 km | **Purchase Price**: €49,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 235 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 520L
+- ℹ️ **Notes**: 800V ultra-fast charging (18 min). 2.9m wheelbase with battery preconditioning.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €3040 | €0 | €416 | €577 | €520 | €70 | €1080 | **€5703** |
-| 2 | €2447 | €0 | €416 | €536 | €544 | €70 | €864 | **€4878** |
-| 3 | €1951 | €0 | €416 | €504 | €568 | €70 | €648 | **€4157** |
-| 4 | €1528 | €0 | €416 | €479 | €592 | €70 | €432 | **€3517** |
-| 5 | €1161 | €0 | €416 | €460 | €616 | €70 | €216 | **€2939** |
+| 1 | €5880 | €0 | €443 | €686 | €348 | €70 | €1740 | **€9167** |
+| 2 | €4312 | €0 | €443 | €617 | €372 | €70 | €1392 | **€7206** |
+| 3 | €3493 | €0 | €443 | €562 | €496 | €70 | €1044 | **€6108** |
+| 4 | €2825 | €0 | €443 | €517 | €520 | €70 | €696 | **€5071** |
+| 5 | €2274 | €0 | €443 | €480 | €544 | €70 | €348 | **€4160** |
 
 **5-Year Summary:**
-- Total Cost: **€21,193.76**
-- Average Annual Cost: €4,238.75
-- Residual Value: €27,872.57
-- Net Cost (after resale): €-6,678.81
+- Total Cost: **€31,712.10**
+- Average Annual Cost: €6,342.42
+- Residual Value: €30,215.75
+- Net Cost (after resale): €1,496.35
 
-### 16. 🔄 ⚡ Audi e-tron 55 quattro (2021)
+### 8. 🔄 ⚡ XPeng G9 Long Range (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 38,000 km | **Purchase Price**: €52,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 98 kWh | **Range**: 570 km | **Purchase Price**: €59,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 300 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 660L
+- ℹ️ **Notes**: Luxury SUV with 800V 300kW fast charging (20 min 10-80%), huge 660L boot & pre-heating.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €4160 | €0 | €634 | €847 | €520 | €74 | €1920 | **€8155** |
-| 2 | €3349 | €0 | €634 | €787 | €544 | €74 | €1536 | **€6924** |
-| 3 | €2669 | €0 | €634 | €740 | €568 | €74 | €1152 | **€5838** |
-| 4 | €2091 | €0 | €634 | €703 | €592 | €74 | €768 | **€4862** |
-| 5 | €1589 | €0 | €634 | €675 | €616 | €74 | €384 | **€3972** |
+| 1 | €7080 | €0 | €521 | €903 | €348 | €75 | €2340 | **€11267** |
+| 2 | €5192 | €0 | €521 | €813 | €372 | €75 | €1872 | **€8845** |
+| 3 | €4206 | €0 | €521 | €740 | €496 | €75 | €1404 | **€7441** |
+| 4 | €3402 | €0 | €521 | €681 | €520 | €75 | €936 | **€6134** |
+| 5 | €2738 | €0 | €521 | €633 | €544 | €75 | €468 | **€4979** |
 
 **5-Year Summary:**
-- Total Cost: **€29,751.33**
-- Average Annual Cost: €5,950.27
-- Residual Value: €38,141.42
-- Net Cost (after resale): €-8,390.09
+- Total Cost: **€38,666.59**
+- Average Annual Cost: €7,733.32
+- Residual Value: €36,382.23
+- Net Cost (after resale): €2,284.36
 
-### 17. 🔄 ⚡ Kia EV6 GT-Line (2021)
+### 9. 🔄 ⚡ Volkswagen ID.4 Pro (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 48,000 km | **Purchase Price**: €35,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77 kWh | **Range**: 550 km | **Purchase Price**: €45,000
+
+- 📐 **Practical Specs**: **Legroom**: Good | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 543L
+- ℹ️ **Notes**: Updated motor (APP550) with manual battery pre-heating and 543L boot.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €2800 | €0 | €462 | €522 | €520 | €70 | €900 | **€5274** |
-| 2 | €2254 | €0 | €462 | €485 | €544 | €70 | €720 | **€4535** |
-| 3 | €1797 | €0 | €462 | €456 | €568 | €70 | €540 | **€3893** |
-| 4 | €1407 | €0 | €462 | €433 | €592 | €70 | €360 | **€3325** |
-| 5 | €1070 | €0 | €462 | €416 | €616 | €70 | €180 | **€2814** |
+| 1 | €5400 | €0 | €435 | €618 | €348 | €70 | €1500 | **€8371** |
+| 2 | €3960 | €0 | €435 | €556 | €372 | €70 | €1200 | **€6593** |
+| 3 | €3208 | €0 | €435 | €506 | €496 | €70 | €900 | **€5615** |
+| 4 | €2595 | €0 | €435 | €465 | €520 | €70 | €600 | **€4685** |
+| 5 | €2089 | €0 | €435 | €433 | €544 | €70 | €300 | **€3871** |
 
 **5-Year Summary:**
-- Total Cost: **€19,840.38**
-- Average Annual Cost: €3,968.08
-- Residual Value: €25,672.11
-- Net Cost (after resale): €-5,831.72
+- Total Cost: **€29,134.84**
+- Average Annual Cost: €5,826.97
+- Residual Value: €27,749.16
+- Net Cost (after resale): €1,385.68
 
-### 18. 🔄 ⚡ Polestar 2 Long Range Dual Motor (2021)
+### 10. 🔄 ⚡ BMW i4 eDrive40 (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 45,000 km | **Purchase Price**: €42,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 83.9 kWh | **Range**: 590 km | **Purchase Price**: €65,000
+
+- 📐 **Practical Specs**: **Legroom**: Good | **Fast Charge**: 205 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 470L
+- ℹ️ **Notes**: Sporty Gran Coupe liftback hatch with manual/nav battery pre-heating.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €3360 | €0 | €497 | €649 | €520 | €71 | €1320 | **€6416** |
-| 2 | €2705 | €0 | €497 | €604 | €544 | €71 | €1056 | **€5476** |
-| 3 | €2156 | €0 | €497 | €567 | €568 | €71 | €792 | **€4651** |
-| 4 | €1689 | €0 | €497 | €539 | €592 | €71 | €528 | **€3915** |
-| 5 | €1284 | €0 | €497 | €518 | €616 | €71 | €264 | **€3248** |
+| 1 | €7800 | €0 | €486 | €995 | €348 | €72 | €2700 | **€12401** |
+| 2 | €5720 | €0 | €486 | €896 | €372 | €72 | €2160 | **€9705** |
+| 3 | €4633 | €0 | €486 | €815 | €496 | €72 | €1620 | **€8122** |
+| 4 | €3748 | €0 | €486 | €750 | €520 | €72 | €1080 | **€6655** |
+| 5 | €3017 | €0 | €486 | €697 | €544 | €72 | €540 | **€5356** |
 
 **5-Year Summary:**
-- Total Cost: **€23,706.22**
-- Average Annual Cost: €4,741.24
-- Residual Value: €30,806.53
-- Net Cost (after resale): €-7,100.31
+- Total Cost: **€42,240.00**
+- Average Annual Cost: €8,448.00
+- Residual Value: €40,082.12
+- Net Cost (after resale): €2,157.87
 
-### 19. 🔄 ⚡ Porsche Taycan 4S (2020)
+### 11. 🔄 ⚡ BMW iX xDrive40 (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 35,000 km | **Purchase Price**: €68,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 76.6 kWh | **Range**: 425 km | **Purchase Price**: €78,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 150 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 500L
+- ℹ️ **Notes**: Plush luxury lounge interior, huge legroom and battery preconditioning.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €5440 | €0 | €682 | €1182 | €544 | €74 | €2880 | **€10802** |
-| 2 | €4379 | €0 | €682 | €1100 | €568 | €74 | €2304 | **€9107** |
-| 3 | €3491 | €0 | €682 | €1034 | €592 | €74 | €1728 | **€7601** |
-| 4 | €2734 | €0 | €682 | €982 | €616 | €74 | €1152 | **€6240** |
-| 5 | €2078 | €0 | €682 | €943 | €640 | €74 | €576 | **€4993** |
+| 1 | €9360 | €0 | €523 | €1236 | €348 | €70 | €3480 | **€15017** |
+| 2 | €6864 | €0 | €523 | €1112 | €372 | €70 | €2784 | **€11726** |
+| 3 | €5560 | €0 | €523 | €1012 | €496 | €70 | €2088 | **€9749** |
+| 4 | €4497 | €0 | €523 | €931 | €520 | €70 | €1392 | **€7934** |
+| 5 | €3620 | €0 | €523 | €866 | €544 | €70 | €696 | **€6320** |
 
 **5-Year Summary:**
-- Total Cost: **€38,743.17**
-- Average Annual Cost: €7,748.63
-- Residual Value: €49,877.24
-- Net Cost (after resale): €-11,134.07
+- Total Cost: **€50,745.92**
+- Average Annual Cost: €10,149.18
+- Residual Value: €48,098.55
+- Net Cost (after resale): €2,647.38
 
-### 20. 🔄 ⚡ Polestar 2 Long Range (2020)
+### 12. 🔄 ⚡ Kia EV9 Earth Long Range (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 55,000 km | **Purchase Price**: €35,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 99.8 kWh | **Range**: 563 km | **Purchase Price**: €72,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 210 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 828L
+- ℹ️ **Notes**: Massive full-size 5/7 seat SUV, 800V charging & 828L cargo space in 5-seat mode.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €2800 | €0 | €510 | €531 | €544 | €71 | €900 | **€5356** |
-| 2 | €2254 | €0 | €510 | €494 | €568 | €71 | €720 | **€4617** |
-| 3 | €1797 | €0 | €510 | €464 | €592 | €71 | €540 | **€3974** |
-| 4 | €1407 | €0 | €510 | €441 | €616 | €71 | €360 | **€3405** |
-| 5 | €1070 | €0 | €510 | €424 | €640 | €71 | €180 | **€2894** |
+| 1 | €8640 | €0 | €612 | €1121 | €348 | €75 | €3120 | **€13917** |
+| 2 | €6336 | €0 | €612 | €1009 | €372 | €75 | €2496 | **€10901** |
+| 3 | €5132 | €0 | €612 | €918 | €496 | €75 | €1872 | **€9106** |
+| 4 | €4151 | €0 | €612 | €845 | €520 | €75 | €1248 | **€7452** |
+| 5 | €3342 | €0 | €612 | €786 | €544 | €75 | €624 | **€5983** |
 
 **5-Year Summary:**
-- Total Cost: **€20,245.42**
-- Average Annual Cost: €4,049.08
-- Residual Value: €25,672.11
-- Net Cost (after resale): €-5,426.68
+- Total Cost: **€47,358.48**
+- Average Annual Cost: €9,471.70
+- Residual Value: €44,398.66
+- Net Cost (after resale): €2,959.82
 
-### 21. 🔄 ⚡ Jaguar I-PACE (2019)
+### 13. 🔄 ⚡ Hyundai Ioniq 6 Long Range (2024)
 
-**Type**: EV | **Condition**: used | **Mileage**: 58,000 km | **Purchase Price**: €45,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77.4 kWh | **Range**: 614 km | **Purchase Price**: €49,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 235 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 401L
+- ℹ️ **Notes**: Ultra efficient streamliner with 800V fast charging & great legroom, but smaller 401L sedan boot.
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
-| 1 | €3600 | €0 | €658 | €708 | €568 | €73 | €1500 | **€7107** |
-| 2 | €2898 | €0 | €658 | €658 | €592 | €73 | €1200 | **€6079** |
-| 3 | €2310 | €0 | €658 | €619 | €616 | €73 | €900 | **€5176** |
-| 4 | €1810 | €0 | €658 | €588 | €640 | €73 | €600 | **€4369** |
-| 5 | €1375 | €0 | €658 | €564 | €664 | €73 | €300 | **€3635** |
+| 1 | €5880 | €0 | €371 | €686 | €348 | €70 | €1740 | **€9095** |
+| 2 | €4312 | €0 | €371 | €617 | €372 | €70 | €1392 | **€7135** |
+| 3 | €3493 | €0 | €371 | €562 | €496 | €70 | €1044 | **€6036** |
+| 4 | €2825 | €0 | €371 | €517 | €520 | €70 | €696 | **€5000** |
+| 5 | €2274 | €0 | €371 | €480 | €544 | €70 | €348 | **€4088** |
 
 **5-Year Summary:**
-- Total Cost: **€26,365.92**
-- Average Annual Cost: €5,273.18
-- Residual Value: €33,006.99
-- Net Cost (after resale): €-6,641.08
+- Total Cost: **€31,353.94**
+- Average Annual Cost: €6,270.79
+- Residual Value: €30,215.75
+- Net Cost (after resale): €1,138.19
 
-### 22. 🔄 ⚡ Polestar 4 Long Range Single Motor (Leased) (2024) 📝 **[LEASED]**
+### 14. 🔄 ⚡ Tesla Model Y Long Range (2022)
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **List Price**: €68,000
+**Type**: EV | **Condition**: used | **Mileage**: 45,000 km | **Battery**: 75 kWh | **Range**: 533 km | **Purchase Price**: €34,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 250 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 854L
+- ℹ️ **Notes**: Plummeted used price (€34k!). 854L cargo, 250kW charging & battery preheating.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €4080 | €0 | €454 | €494 | €496 | €70 | €840 | **€6433** |
+| 2 | €2992 | €0 | €454 | €444 | €520 | €70 | €672 | **€5152** |
+| 3 | €2424 | €0 | €454 | €404 | €544 | €70 | €504 | **€4399** |
+| 4 | €1960 | €0 | €454 | €372 | €568 | €70 | €336 | **€3760** |
+| 5 | €1578 | €0 | €454 | €346 | €592 | €70 | €168 | **€3208** |
+
+**5-Year Summary:**
+- Total Cost: **€22,951.88**
+- Average Annual Cost: €4,590.38
+- Residual Value: €20,966.03
+- Net Cost (after resale): €1,985.85
+
+### 15. 🔄 ⚡ Volkswagen ID.7 Pro (2023)
+
+**Type**: EV | **Condition**: used | **Mileage**: 25,000 km | **Battery**: 77 kWh | **Range**: 615 km | **Purchase Price**: €39,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 532L
+- ℹ️ **Notes**: Young used executive cruiser. Massive legroom (>1m), battery pre-heater.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €4680 | €0 | €443 | €556 | €372 | €70 | €1140 | **€7261** |
+| 2 | €3432 | €0 | €443 | €500 | €496 | €70 | €912 | **€5854** |
+| 3 | €2780 | €0 | €443 | €455 | €520 | €70 | €684 | **€4953** |
+| 4 | €2249 | €0 | €443 | €419 | €544 | €70 | €456 | **€4181** |
+| 5 | €1810 | €0 | €443 | €390 | €568 | €70 | €228 | **€3509** |
+
+**5-Year Summary:**
+- Total Cost: **€25,757.19**
+- Average Annual Cost: €5,151.44
+- Residual Value: €24,049.27
+- Net Cost (after resale): €1,707.92
+
+### 16. 🔄 ⚡ Hyundai Ioniq 5 Long Range RWD (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 48,000 km | **Battery**: 72.6 kWh | **Range**: 481 km | **Purchase Price**: €26,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 220 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 527L
+- ℹ️ **Notes**: Plummeted price (€26k!). 800V charging (18 min 10-80%), sliding rear bench.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €2080 | €0 | €451 | €380 | €520 | €69 | €360 | **€3861** |
+| 2 | €1674 | €0 | €451 | €354 | €544 | €69 | €288 | **€3380** |
+| 3 | €1335 | €0 | €451 | €332 | €568 | €69 | €216 | **€2972** |
+| 4 | €1046 | €0 | €451 | €316 | €592 | €69 | €144 | **€2618** |
+| 5 | €795 | €0 | €451 | €303 | €616 | €69 | €72 | **€2306** |
+
+**5-Year Summary:**
+- Total Cost: **€15,136.49**
+- Average Annual Cost: €3,027.30
+- Residual Value: €19,070.71
+- Net Cost (after resale): €-3,934.22
+
+### 17. 🔄 ⚡ Kia EV6 Long Range (2022)
+
+**Type**: EV | **Condition**: used | **Mileage**: 32,000 km | **Battery**: 77.4 kWh | **Range**: 528 km | **Purchase Price**: €29,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 235 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 520L
+- ℹ️ **Notes**: Price dropped below €30k. 800V fast charging & great rear space.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €3480 | €0 | €443 | €406 | €496 | €70 | €540 | **€5435** |
+| 2 | €2552 | €0 | €443 | €365 | €520 | €70 | €432 | **€4383** |
+| 3 | €2067 | €0 | €443 | €332 | €544 | €70 | €324 | **€3781** |
+| 4 | €1672 | €0 | €443 | €306 | €568 | €70 | €216 | **€3275** |
+| 5 | €1346 | €0 | €443 | €284 | €592 | €70 | €108 | **€2844** |
+
+**5-Year Summary:**
+- Total Cost: **€19,717.23**
+- Average Annual Cost: €3,943.45
+- Residual Value: €17,882.79
+- Net Cost (after resale): €1,834.44
+
+### 18. 🔄 ⚡ Kia EV6 GT-Line (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 48,000 km | **Battery**: 77.4 kWh | **Range**: 506 km | **Purchase Price**: €31,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 235 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 490L
+- ℹ️ **Notes**: Top trim EV6 with 800V charging & battery preconditioning.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €2480 | €0 | €462 | €462 | €520 | €70 | €660 | **€4654** |
+| 2 | €1996 | €0 | €462 | €430 | €544 | €70 | €528 | **€4030** |
+| 3 | €1591 | €0 | €462 | €404 | €568 | €70 | €396 | **€3491** |
+| 4 | €1247 | €0 | €462 | €384 | €592 | €70 | €264 | **€3018** |
+| 5 | €947 | €0 | €462 | €368 | €616 | €70 | €132 | **€2596** |
+
+**5-Year Summary:**
+- Total Cost: **€17,790.12**
+- Average Annual Cost: €3,558.02
+- Residual Value: €22,738.15
+- Net Cost (after resale): €-4,948.03
+
+### 19. 🔄 ⚡ Skoda Enyaq iV 80 (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 45,000 km | **Battery**: 77 kWh | **Range**: 520 km | **Purchase Price**: €27,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 135 kW | **Battery Pre-heater**: ❌ No | **Cargo**: 585L
+- ℹ️ **Notes**: Price dropped to €27k! Huge 585L boot & legroom. Note: MEB 3.x lacks manual pre-heat button.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €2160 | €0 | €443 | €395 | €520 | €70 | €420 | **€4008** |
+| 2 | €1739 | €0 | €443 | €367 | €544 | €70 | €336 | **€3499** |
+| 3 | €1386 | €0 | €443 | €345 | €568 | €70 | €252 | **€3065** |
+| 4 | €1086 | €0 | €443 | €328 | €592 | €70 | €168 | **€2687** |
+| 5 | €825 | €0 | €443 | €315 | €616 | €70 | €84 | **€2353** |
+
+**5-Year Summary:**
+- Total Cost: **€15,612.45**
+- Average Annual Cost: €3,122.49
+- Residual Value: €19,804.20
+- Net Cost (after resale): €-4,191.74
+
+### 20. 🔄 ⚡ Audi e-tron 55 quattro (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 48,000 km | **Battery**: 95 kWh | **Range**: 441 km | **Purchase Price**: €32,000
+
+- 📐 **Practical Specs**: **Legroom**: Excellent | **Fast Charge**: 150 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 660L
+- ℹ️ **Notes**: Price plummeted from €52k to €32k! Luxurious, 150kW flat charging curve, 660L boot.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €2560 | €0 | €634 | €521 | €520 | €74 | €720 | **€5029** |
+| 2 | €2061 | €0 | €634 | €485 | €544 | €74 | €576 | **€4373** |
+| 3 | €1643 | €0 | €634 | €456 | €568 | €74 | €432 | **€3806** |
+| 4 | €1287 | €0 | €634 | €433 | €592 | €74 | €288 | **€3308** |
+| 5 | €978 | €0 | €634 | €415 | €616 | €74 | €144 | **€2861** |
+
+**5-Year Summary:**
+- Total Cost: **€19,377.70**
+- Average Annual Cost: €3,875.54
+- Residual Value: €23,471.64
+- Net Cost (after resale): €-4,093.94
+
+### 21. 🔄 ⚡ Mercedes-Benz EQE 350+ (2022)
+
+**Type**: EV | **Condition**: used | **Mileage**: 38,000 km | **Battery**: 90.6 kWh | **Range**: 590 km | **Purchase Price**: €43,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 170 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 430L
+- ℹ️ **Notes**: Price dropped by nearly €40k! Outstanding rear legroom, pre-heating via Electric Intelligence.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €5160 | €0 | €502 | €692 | €496 | €73 | €1380 | **€8304** |
+| 2 | €3784 | €0 | €502 | €623 | €520 | €73 | €1104 | **€6607** |
+| 3 | €3065 | €0 | €502 | €567 | €544 | €73 | €828 | **€5579** |
+| 4 | €2479 | €0 | €502 | €522 | €568 | €73 | €552 | **€4696** |
+| 5 | €1996 | €0 | €502 | €485 | €592 | €73 | €276 | **€3924** |
+
+**5-Year Summary:**
+- Total Cost: **€29,110.53**
+- Average Annual Cost: €5,822.11
+- Residual Value: €26,515.87
+- Net Cost (after resale): €2,594.66
+
+### 22. 🔄 ⚡ BMW iX xDrive40 (2022)
+
+**Type**: EV | **Condition**: used | **Mileage**: 35,000 km | **Battery**: 76.6 kWh | **Range**: 425 km | **Purchase Price**: €46,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 150 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 500L
+- ℹ️ **Notes**: Plummeted used price (€46k). Ultimate luxury SUV, huge rear legroom & battery pre-heating.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €5520 | €0 | €523 | €729 | €496 | €70 | €1560 | **€8898** |
+| 2 | €4048 | €0 | €523 | €656 | €520 | €70 | €1248 | **€7065** |
+| 3 | €3279 | €0 | €523 | €597 | €544 | €70 | €936 | **€5949** |
+| 4 | €2652 | €0 | €523 | €549 | €568 | €70 | €624 | **€4987** |
+| 5 | €2135 | €0 | €523 | €511 | €592 | €70 | €312 | **€4143** |
+
+**5-Year Summary:**
+- Total Cost: **€31,043.34**
+- Average Annual Cost: €6,208.67
+- Residual Value: €28,365.81
+- Net Cost (after resale): €2,677.53
+
+### 23. 🔄 ⚡ XPeng G9 RWD Long Range (2023)
+
+**Type**: EV | **Condition**: used | **Mileage**: 25,000 km | **Battery**: 98 kWh | **Range**: 570 km | **Purchase Price**: €44,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 300 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 660L
+- ℹ️ **Notes**: Used market bargain (~44k€). 800V 300kW charging, massive 660L boot, pre-heating.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €5280 | €0 | €521 | €674 | €372 | €75 | €1440 | **€8361** |
+| 2 | €3872 | €0 | €521 | €606 | €496 | €75 | €1152 | **€6722** |
+| 3 | €3136 | €0 | €521 | €552 | €520 | €75 | €864 | **€5668** |
+| 4 | €2537 | €0 | €521 | €508 | €544 | €75 | €576 | **€4760** |
+| 5 | €2042 | €0 | €521 | €472 | €568 | €75 | €288 | **€3966** |
+
+**5-Year Summary:**
+- Total Cost: **€29,477.81**
+- Average Annual Cost: €5,895.56
+- Residual Value: €27,132.51
+- Net Cost (after resale): €2,345.30
+
+### 24. 🔄 ⚡ Volkswagen ID.4 Pro (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 55,000 km | **Battery**: 77 kWh | **Range**: 520 km | **Purchase Price**: €23,000
+
+- 📐 **Practical Specs**: **Legroom**: Good | **Fast Charge**: 135 kW | **Battery Pre-heater**: ❌ No | **Cargo**: 543L
+- ℹ️ **Notes**: Budget champion after price drop (€23k). 543L boot. MEB 3.x software lacks pre-heat button.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €1840 | €0 | €470 | €330 | €520 | €70 | €180 | **€3410** |
+| 2 | €1481 | €0 | €470 | €307 | €544 | €70 | €144 | **€3016** |
+| 3 | €1181 | €0 | €470 | €289 | €568 | €70 | €108 | **€2685** |
+| 4 | €925 | €0 | €470 | €274 | €592 | €70 | €72 | **€2403** |
+| 5 | €703 | €0 | €470 | €263 | €616 | €70 | €36 | **€2158** |
+
+**5-Year Summary:**
+- Total Cost: **€13,673.15**
+- Average Annual Cost: €2,734.63
+- Residual Value: €16,870.24
+- Net Cost (after resale): €-3,197.09
+
+### 25. 🔄 ⚡ BMW i4 eDrive40 (2022)
+
+**Type**: EV | **Condition**: used | **Mileage**: 28,000 km | **Battery**: 83.9 kWh | **Range**: 590 km | **Purchase Price**: €41,000
+
+- 📐 **Practical Specs**: **Legroom**: Good | **Fast Charge**: 205 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 470L
+- ℹ️ **Notes**: Sporty Gran Coupe liftback hatch with manual & navigation battery pre-heating.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €4920 | €0 | €486 | €628 | €496 | €72 | €1260 | **€7862** |
+| 2 | €3608 | €0 | €486 | €565 | €520 | €72 | €1008 | **€6259** |
+| 3 | €2922 | €0 | €486 | €514 | €544 | €72 | €756 | **€5294** |
+| 4 | €2364 | €0 | €486 | €473 | €568 | €72 | €504 | **€4467** |
+| 5 | €1903 | €0 | €486 | €440 | €592 | €72 | €252 | **€3745** |
+
+**5-Year Summary:**
+- Total Cost: **€27,625.94**
+- Average Annual Cost: €5,525.19
+- Residual Value: €25,282.57
+- Net Cost (after resale): €2,343.37
+
+### 26. 🔄 ⚡ Tesla Model 3 Long Range (2021)
+
+**Type**: EV | **Condition**: used | **Mileage**: 52,000 km | **Battery**: 75 kWh | **Range**: 614 km | **Purchase Price**: €26,000
+
+- 📐 **Practical Specs**: **Legroom**: Fair | **Fast Charge**: 250 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 425L
+- ℹ️ **Notes**: Highly efficient & cheap (€26k), but tighter rear legroom & sedan boot opening.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €2080 | €0 | €416 | €395 | €520 | €70 | €360 | **€3841** |
+| 2 | €1674 | €0 | €416 | €367 | €544 | €70 | €288 | **€3359** |
+| 3 | €1335 | €0 | €416 | €345 | €568 | €70 | €216 | **€2950** |
+| 4 | €1046 | €0 | €416 | €328 | €592 | €70 | €144 | **€2595** |
+| 5 | €795 | €0 | €416 | €315 | €616 | €70 | €72 | **€2283** |
+
+**5-Year Summary:**
+- Total Cost: **€15,028.30**
+- Average Annual Cost: €3,005.66
+- Residual Value: €19,070.71
+- Net Cost (after resale): €-4,042.41
+
+### 27. 🔄 ⚡ Polestar 2 Long Range Single Motor (2022)
+
+**Type**: EV | **Condition**: used | **Mileage**: 38,000 km | **Battery**: 78 kWh | **Range**: 540 km | **Purchase Price**: €26,000
+
+- 📐 **Practical Specs**: **Legroom**: Fair | **Fast Charge**: 150 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 405L
+- ℹ️ **Notes**: Great quality & Google nav pre-heating, but smaller rear space (tunnel hump) & 405L boot.
+
+| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
+|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
+| 1 | €3120 | €0 | €451 | €378 | €496 | €71 | €360 | **€4875** |
+| 2 | €2288 | €0 | €451 | €340 | €520 | €71 | €288 | **€3957** |
+| 3 | €1853 | €0 | €451 | €309 | €544 | €71 | €216 | **€3444** |
+| 4 | €1499 | €0 | €451 | €284 | €568 | €71 | €144 | **€3017** |
+| 5 | €1207 | €0 | €451 | €265 | €592 | €71 | €72 | **€2657** |
+
+**5-Year Summary:**
+- Total Cost: **€17,950.21**
+- Average Annual Cost: €3,590.04
+- Residual Value: €16,032.85
+- Net Cost (after resale): €1,917.36
+
+### 28. 🔄 ⚡ Polestar 4 Long Range Single Motor (Leased) (2024) 📝 **[LEASED]**
+
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 94 kWh | **Range**: 620 km | **List Price**: €68,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 200 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 500L
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -417,9 +607,11 @@
 - Average Annual Cost: €9,326.89
 - Residual Value: N/A (Returned at end of lease)
 
-### 23. 🔄 ⚡ Volkswagen ID.7 Pro Elegance (Leased) (2024) 📝 **[LEASED]**
+### 29. 🔄 ⚡ Volkswagen ID.7 Pro Elegance (Leased) (2024) 📝 **[LEASED]**
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **List Price**: €58,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 77 kWh | **Range**: 621 km | **List Price**: €58,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 175 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 532L
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -434,9 +626,11 @@
 - Average Annual Cost: €10,084.86
 - Residual Value: N/A (Returned at end of lease)
 
-### 24. 🔄 ⚡ Volkswagen ID.7 GTX 4MOTION (Leased) (2024) 📝 **[LEASED]**
+### 30. 🔄 ⚡ Volkswagen ID.7 GTX 4MOTION (Leased) (2024) 📝 **[LEASED]**
 
-**Type**: EV | **Condition**: used | **Mileage**: 0 km | **List Price**: €65,000
+**Type**: EV | **Condition**: used | **Mileage**: 0 km | **Battery**: 86 kWh | **Range**: 580 km | **List Price**: €65,000
+
+- 📐 **Practical Specs**: **Legroom**: Outstanding | **Fast Charge**: 200 kW | **Battery Pre-heater**: ✅ Yes | **Cargo**: 532L
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -451,9 +645,9 @@
 - Average Annual Cost: €11,075.47
 - Residual Value: N/A (Returned at end of lease)
 
-### 25. 🔄 🔌 Toyota RAV4 PHEV (2024)
+### 31. 🔄 🔌 Toyota RAV4 PHEV (2024)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €52,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Battery**: 18.1 kWh | **Range**: 75 km | **Purchase Price**: €52,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -469,9 +663,9 @@
 - Residual Value: €33,871.42
 - Net Cost (after resale): €8,670.65
 
-### 26. 🔄 🔌 Volvo XC60 T8 Recharge (2024)
+### 32. 🔄 🔌 Volvo XC60 T8 Recharge (2024)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €68,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Battery**: 18.8 kWh | **Range**: 81 km | **Purchase Price**: €68,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -487,9 +681,9 @@
 - Residual Value: €44,293.39
 - Net Cost (after resale): €10,376.40
 
-### 27. 🔄 🔌 BMW 330e (2024)
+### 33. 🔄 🔌 BMW 330e (2024)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €52,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Battery**: 12 kWh | **Range**: 54 km | **Purchase Price**: €52,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -505,9 +699,9 @@
 - Residual Value: €33,871.42
 - Net Cost (after resale): €8,294.39
 
-### 28. 🔄 🔌 Mercedes-Benz GLE 350 de (2024)
+### 34. 🔄 🔌 Mercedes-Benz GLE 350 de (2024)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €78,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Battery**: 31.2 kWh | **Range**: 106 km | **Purchase Price**: €78,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -523,9 +717,9 @@
 - Residual Value: €50,807.13
 - Net Cost (after resale): €8,774.20
 
-### 29. 🔄 🔌 Volvo XC90 T8 Recharge (2024)
+### 35. 🔄 🔌 Volvo XC90 T8 Recharge (2024)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €82,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 0 km | **Battery**: 18.8 kWh | **Range**: 71 km | **Purchase Price**: €82,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -541,9 +735,9 @@
 - Residual Value: €53,412.62
 - Net Cost (after resale): €11,411.37
 
-### 30. 🔄 🔌 VW Passat GTE (2021)
+### 36. 🔄 🔌 VW Passat GTE (2021)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 45,000 km | **Purchase Price**: €28,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 45,000 km | **Battery**: 13 kWh | **Range**: 56 km | **Purchase Price**: €28,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -559,9 +753,9 @@
 - Residual Value: €21,653.86
 - Net Cost (after resale): €4,253.75
 
-### 31. 🔄 🔌 BMW 330e (2021)
+### 37. 🔄 🔌 BMW 330e (2021)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 42,000 km | **Purchase Price**: €35,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 42,000 km | **Battery**: 12 kWh | **Range**: 52 km | **Purchase Price**: €35,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -577,9 +771,9 @@
 - Residual Value: €27,067.33
 - Net Cost (after resale): €1,804.93
 
-### 32. 🔄 🔌 Volvo XC60 T8 Recharge (2020)
+### 38. 🔄 🔌 Volvo XC60 T8 Recharge (2020)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 48,000 km | **Purchase Price**: €42,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 48,000 km | **Battery**: 11.6 kWh | **Range**: 45 km | **Purchase Price**: €42,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -595,9 +789,9 @@
 - Residual Value: €32,480.80
 - Net Cost (after resale): €3,672.65
 
-### 33. 🔄 🔌 Mitsubishi Outlander PHEV (2020)
+### 39. 🔄 🔌 Mitsubishi Outlander PHEV (2020)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 55,000 km | **Purchase Price**: €28,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 55,000 km | **Battery**: 13.8 kWh | **Range**: 54 km | **Purchase Price**: €28,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -613,9 +807,9 @@
 - Residual Value: €21,653.86
 - Net Cost (after resale): €6,332.77
 
-### 34. 🔄 🔌 Kia Niro PHEV (2019)
+### 40. 🔄 🔌 Kia Niro PHEV (2019)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 65,000 km | **Purchase Price**: €22,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 65,000 km | **Battery**: 8.9 kWh | **Range**: 58 km | **Purchase Price**: €22,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -631,9 +825,9 @@
 - Residual Value: €17,013.75
 - Net Cost (after resale): €5,518.05
 
-### 35. 🔄 🔌 BMW X5 xDrive45e (2019)
+### 41. 🔄 🔌 BMW X5 xDrive45e (2019)
 
-**Type**: PHEV | **Condition**: used | **Mileage**: 62,000 km | **Purchase Price**: €48,000
+**Type**: PHEV | **Condition**: used | **Mileage**: 62,000 km | **Battery**: 24 kWh | **Range**: 87 km | **Purchase Price**: €48,000
 
 | Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |
 |------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|
@@ -649,7 +843,7 @@
 - Residual Value: €37,120.91
 - Net Cost (after resale): €2,595.17
 
-### 36. 🔄 ⛽ Toyota RAV4 Hybrid (2024)
+### 42. 🔄 ⛽ Toyota RAV4 Hybrid (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €42,000
 
@@ -667,7 +861,7 @@
 - Residual Value: €28,881.12
 - Net Cost (after resale): €9,110.23
 
-### 37. 🔄 ⛽ Volkswagen Tiguan 2.0 TDI (2024)
+### 43. 🔄 ⛽ Volkswagen Tiguan 2.0 TDI (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €45,000
 
@@ -685,7 +879,7 @@
 - Residual Value: €30,944.06
 - Net Cost (after resale): €9,611.10
 
-### 38. 🔄 ⛽ BMW 320d (2024)
+### 44. 🔄 ⛽ BMW 320d (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €52,000
 
@@ -703,7 +897,7 @@
 - Residual Value: €35,757.58
 - Net Cost (after resale): €7,311.92
 
-### 39. 🔄 ⛽ Mazda CX-60 Diesel (2024)
+### 45. 🔄 ⛽ Mazda CX-60 Diesel (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €48,000
 
@@ -721,7 +915,7 @@
 - Residual Value: €33,006.99
 - Net Cost (after resale): €8,786.21
 
-### 40. 🔄 ⛽ Skoda Octavia 2.0 TDI (2024)
+### 46. 🔄 ⛽ Skoda Octavia 2.0 TDI (2024)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 0 km | **Purchase Price**: €35,000
 
@@ -739,7 +933,7 @@
 - Residual Value: €24,067.60
 - Net Cost (after resale): €8,691.75
 
-### 41. 🔄 ⛽ Toyota Corolla Hybrid (2021)
+### 47. 🔄 ⛽ Toyota Corolla Hybrid (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 48,000 km | **Purchase Price**: €22,000
 
@@ -757,7 +951,7 @@
 - Residual Value: €17,928.47
 - Net Cost (after resale): €4,530.78
 
-### 42. 🔄 ⛽ Volkswagen Golf 1.5 TSI (2021)
+### 48. 🔄 ⛽ Volkswagen Golf 1.5 TSI (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 52,000 km | **Purchase Price**: €20,000
 
@@ -775,7 +969,7 @@
 - Residual Value: €16,298.61
 - Net Cost (after resale): €8,094.77
 
-### 43. 🔄 ⛽ BMW 320d (2021)
+### 49. 🔄 ⛽ BMW 320d (2021)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 45,000 km | **Purchase Price**: €32,000
 
@@ -793,7 +987,7 @@
 - Residual Value: €26,077.77
 - Net Cost (after resale): €3,046.97
 
-### 44. 🔄 ⛽ Skoda Octavia 2.0 TDI (2019)
+### 50. 🔄 ⛽ Skoda Octavia 2.0 TDI (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 68,000 km | **Purchase Price**: €18,000
 
@@ -811,7 +1005,7 @@
 - Residual Value: €14,668.75
 - Net Cost (after resale): €8,074.58
 
-### 45. 🔄 ⛽ Toyota Yaris Hybrid (2019)
+### 51. 🔄 ⛽ Toyota Yaris Hybrid (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 72,000 km | **Purchase Price**: €15,000
 
@@ -829,7 +1023,7 @@
 - Residual Value: €12,223.96
 - Net Cost (after resale): €6,933.00
 
-### 46. 🔄 ⛽ Mazda 3 Skyactiv-G (2019)
+### 52. 🔄 ⛽ Mazda 3 Skyactiv-G (2019)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 65,000 km | **Purchase Price**: €16,000
 
@@ -847,7 +1041,7 @@
 - Residual Value: €13,038.89
 - Net Cost (after resale): €10,452.08
 
-### 47. 🔄 ⛽ Volkswagen Passat 2.0 TDI (2018)
+### 53. 🔄 ⛽ Volkswagen Passat 2.0 TDI (2018)
 
 **Type**: ICE | **Condition**: used | **Mileage**: 85,000 km | **Purchase Price**: €16,000
 
@@ -871,104 +1065,116 @@
 
 ### Ranked by Total Cost of Ownership
 
-| Rank | Vehicle | Type | Year | Condition | Total Cost | vs Best |
-|------|---------|------|------|-----------|------------|---------|
-| 1 | 🔄 ⛽ Toyota Yaris Hybrid | ICE | 2019 | used | €19,156.96 | ⭐ BEST |
-| 2 | 🔄 ⚡ Kia EV6 GT-Line | EV | 2021 | used | €19,840.38 | +€683.43 |
-| 3 | 🔄 ⚡ Polestar 2 Long Range | EV | 2020 | used | €20,245.42 | +€1,088.47 |
-| 4 | 🔄 ⚡ Tesla Model 3 Long Range | EV | 2021 | used | €21,193.76 | +€2,036.80 |
-| 5 | 🔄 ⛽ Toyota Corolla Hybrid | ICE | 2021 | used | €22,459.24 | +€3,302.29 |
-| 6 | 🔄 🔌 Kia Niro PHEV | PHEV | 2019 | used | €22,531.80 | +€3,374.84 |
-| 7 | 🔄 ⛽ Skoda Octavia 2.0 TDI | ICE | 2019 | used | €22,743.33 | +€3,586.37 |
-| 8 | 🔄 ⛽ Volkswagen Passat 2.0 TDI | ICE | 2018 | used | €23,387.09 | +€4,230.14 |
-| 9 | 🔄 ⛽ Mazda 3 Skyactiv-G | ICE | 2019 | used | €23,490.96 | +€4,334.00 |
-| 10 | 🔄 ⚡ Polestar 2 Long Range Dual Motor | EV | 2021 | used | €23,706.22 | +€4,549.26 |
-| 11 | 🔄 ⛽ Volkswagen Golf 1.5 TSI | ICE | 2021 | used | €24,393.37 | +€5,236.42 |
-| 12 | 🔄 ⚡ Kia EV6 Long Range | EV | 2022 | used | €25,312.92 | +€6,155.96 |
-| 13 | 🔄 ⚡ Polestar 2 Long Range Single Motor | EV | 2022 | used | €25,437.58 | +€6,280.62 |
-| 14 | 🔄 🔌 VW Passat GTE | PHEV | 2021 | used | €25,907.61 | +€6,750.65 |
-| 15 | 🔄 ⚡ Jaguar I-PACE | EV | 2019 | used | €26,365.92 | +€7,208.96 |
-| 16 | 🔄 ⚡ Volkswagen ID.7 Pro | EV | 2022 | used | €27,845.72 | +€8,688.77 |
-| 17 | 🔄 🔌 Mitsubishi Outlander PHEV | PHEV | 2020 | used | €27,986.64 | +€8,829.68 |
-| 18 | 🔄 🔌 BMW 330e | PHEV | 2021 | used | €28,872.26 | +€9,715.30 |
-| 19 | 🔄 ⛽ BMW 320d | ICE | 2021 | used | €29,124.74 | +€9,967.79 |
-| 20 | 🔄 ⚡ Audi e-tron 55 quattro | EV | 2021 | used | €29,751.33 | +€10,594.37 |
-| 21 | 🔄 ⚡ Volkswagen ID.4 Pro | EV | 2024 | used | €31,171.23 | +€12,014.27 |
-| 22 | 🔄 ⚡ BMW i4 eDrive40 | EV | 2022 | used | €32,016.71 | +€12,859.75 |
-| 23 | 🔄 ⛽ Skoda Octavia 2.0 TDI | ICE | 2024 | used | €32,759.35 | +€13,602.39 |
-| 24 | 🔄 ⚡ Hyundai Ioniq 6 Long Range | EV | 2024 | used | €33,219.17 | +€14,062.21 |
-| 25 | 🔄 ⚡ Kia EV6 Long Range RWD | EV | 2024 | used | €33,577.33 | +€14,420.37 |
-| 26 | 🔄 ⚡ Polestar 2 Long Range Single Motor | EV | 2024 | used | €34,886.79 | +€15,729.83 |
-| 27 | 🔄 ⚡ Tesla Model Y Long Range | EV | 2024 | used | €35,614.77 | +€16,457.81 |
-| 28 | 🔄 🔌 Volvo XC60 T8 Recharge | PHEV | 2020 | used | €36,153.45 | +€16,996.49 |
-| 29 | 🔄 ⚡ Volkswagen ID.7 Pro | EV | 2024 | used | €37,344.41 | +€18,187.45 |
-| 30 | 🔄 ⛽ Toyota RAV4 Hybrid | ICE | 2024 | used | €37,991.35 | +€18,834.39 |
-| 31 | 🔄 ⚡ Porsche Taycan 4S | EV | 2020 | used | €38,743.17 | +€19,586.21 |
-| 32 | 🔄 🔌 BMW X5 xDrive45e | PHEV | 2019 | used | €39,716.08 | +€20,559.13 |
-| 33 | 🔄 ⛽ Volkswagen Tiguan 2.0 TDI | ICE | 2024 | used | €40,555.16 | +€21,398.20 |
-| 34 | 🔄 ⛽ Mazda CX-60 Diesel | ICE | 2024 | used | €41,793.20 | +€22,636.25 |
-| 35 | 🔄 🔌 BMW 330e | PHEV | 2024 | used | €42,165.81 | +€23,008.85 |
-| 36 | 🔄 🔌 Toyota RAV4 PHEV | PHEV | 2024 | used | €42,542.07 | +€23,385.11 |
-| 37 | 🔄 ⛽ BMW 320d | ICE | 2024 | used | €43,069.49 | +€23,912.54 |
-| 38 | 🔄 ⚡ Polestar 4 Long Range Single Motor | EV | 2024 | used | €44,111.73 | +€24,954.77 |
-| 39 | 🔄 ⚡ BMW i4 eDrive40 | EV | 2024 | used | €44,121.75 | +€24,964.80 |
-| 40 | 🔄 ⚡ Polestar 4 Long Range Single Motor (Leased) | EV | 2024 | used | €46,634.43 | +€27,477.47 |
-| 41 | 🔄 ⚡ Volkswagen ID.7 Pro Elegance (Leased) | EV | 2024 | used | €50,424.32 | +€31,267.36 |
-| 42 | 🔄 ⚡ Mercedes-Benz EQE 350 | EV | 2024 | used | €53,262.27 | +€34,105.31 |
-| 43 | 🔄 🔌 Volvo XC60 T8 Recharge | PHEV | 2024 | used | €54,669.79 | +€35,512.84 |
-| 44 | 🔄 ⚡ BMW iX xDrive40 | EV | 2024 | used | €55,152.11 | +€35,995.15 |
-| 45 | 🔄 ⚡ Volkswagen ID.7 GTX 4MOTION (Leased) | EV | 2024 | used | €55,377.35 | +€36,220.39 |
-| 46 | 🔄 🔌 Mercedes-Benz GLE 350 de | PHEV | 2024 | used | €59,581.33 | +€40,424.37 |
-| 47 | 🔄 🔌 Volvo XC90 T8 Recharge | PHEV | 2024 | used | €64,823.99 | +€45,667.03 |
+| Rank | Vehicle | Type | Year | Battery | Range | Condition | Total Cost | vs Best |
+|------|---------|------|------|---------|-------|-----------|------------|---------|
+| 1 | 🔄 ⚡ Volkswagen ID.4 Pro | EV | 2021 | 77 kWh | 520 km | used | €13,673.15 | ⭐ BEST |
+| 2 | 🔄 ⚡ Tesla Model 3 Long Range | EV | 2021 | 75 kWh | 614 km | used | €15,028.30 | +€1,355.15 |
+| 3 | 🔄 ⚡ Hyundai Ioniq 5 Long Range RWD | EV | 2021 | 72.6 kWh | 481 km | used | €15,136.49 | +€1,463.34 |
+| 4 | 🔄 ⚡ Skoda Enyaq iV 80 | EV | 2021 | 77 kWh | 520 km | used | €15,612.45 | +€1,939.30 |
+| 5 | 🔄 ⚡ Kia EV6 GT-Line | EV | 2021 | 77.4 kWh | 506 km | used | €17,790.12 | +€4,116.97 |
+| 6 | 🔄 ⚡ Polestar 2 Long Range Single Motor | EV | 2022 | 78 kWh | 540 km | used | €17,950.21 | +€4,277.06 |
+| 7 | 🔄 ⛽ Toyota Yaris Hybrid | ICE | 2019 | N/A | N/A | used | €19,156.96 | +€5,483.81 |
+| 8 | 🔄 ⚡ Audi e-tron 55 quattro | EV | 2021 | 95 kWh | 441 km | used | €19,377.70 | +€5,704.55 |
+| 9 | 🔄 ⚡ Kia EV6 Long Range | EV | 2022 | 77.4 kWh | 528 km | used | €19,717.23 | +€6,044.08 |
+| 10 | 🔄 ⛽ Toyota Corolla Hybrid | ICE | 2021 | N/A | N/A | used | €22,459.24 | +€8,786.09 |
+| 11 | 🔄 🔌 Kia Niro PHEV | PHEV | 2019 | 8.9 kWh | 58 km | used | €22,531.80 | +€8,858.65 |
+| 12 | 🔄 ⛽ Skoda Octavia 2.0 TDI | ICE | 2019 | N/A | N/A | used | €22,743.33 | +€9,070.18 |
+| 13 | 🔄 ⚡ Tesla Model Y Long Range | EV | 2022 | 75 kWh | 533 km | used | €22,951.88 | +€9,278.73 |
+| 14 | 🔄 ⛽ Volkswagen Passat 2.0 TDI | ICE | 2018 | N/A | N/A | used | €23,387.09 | +€9,713.94 |
+| 15 | 🔄 ⛽ Mazda 3 Skyactiv-G | ICE | 2019 | N/A | N/A | used | €23,490.96 | +€9,817.81 |
+| 16 | 🔄 ⛽ Volkswagen Golf 1.5 TSI | ICE | 2021 | N/A | N/A | used | €24,393.37 | +€10,720.22 |
+| 17 | 🔄 ⚡ Volkswagen ID.7 Pro | EV | 2023 | 77 kWh | 615 km | used | €25,757.19 | +€12,084.04 |
+| 18 | 🔄 🔌 VW Passat GTE | PHEV | 2021 | 13 kWh | 56 km | used | €25,907.61 | +€12,234.46 |
+| 19 | 🔄 ⚡ BMW i4 eDrive40 | EV | 2022 | 83.9 kWh | 590 km | used | €27,625.94 | +€13,952.79 |
+| 20 | 🔄 🔌 Mitsubishi Outlander PHEV | PHEV | 2020 | 13.8 kWh | 54 km | used | €27,986.64 | +€14,313.49 |
+| 21 | 🔄 ⚡ Tesla Model Y RWD | EV | 2024 | 60 kWh | 455 km | used | €28,836.61 | +€15,163.46 |
+| 22 | 🔄 🔌 BMW 330e | PHEV | 2021 | 12 kWh | 52 km | used | €28,872.26 | +€15,199.11 |
+| 23 | 🔄 ⚡ Mercedes-Benz EQE 350+ | EV | 2022 | 90.6 kWh | 590 km | used | €29,110.53 | +€15,437.38 |
+| 24 | 🔄 ⛽ BMW 320d | ICE | 2021 | N/A | N/A | used | €29,124.74 | +€15,451.59 |
+| 25 | 🔄 ⚡ Volkswagen ID.4 Pro | EV | 2024 | 77 kWh | 550 km | used | €29,134.84 | +€15,461.69 |
+| 26 | 🔄 ⚡ XPeng G9 RWD Long Range | EV | 2023 | 98 kWh | 570 km | used | €29,477.81 | +€15,804.66 |
+| 27 | 🔄 ⚡ Skoda Enyaq 85 | EV | 2024 | 77 kWh | 565 km | used | €30,995.97 | +€17,322.82 |
+| 28 | 🔄 ⚡ BMW iX xDrive40 | EV | 2022 | 76.6 kWh | 425 km | used | €31,043.34 | +€17,370.19 |
+| 29 | 🔄 ⚡ Hyundai Ioniq 6 Long Range | EV | 2024 | 77.4 kWh | 614 km | used | €31,353.94 | +€17,680.79 |
+| 30 | 🔄 ⚡ Hyundai Ioniq 5 Long Range RWD | EV | 2024 | 84 kWh | 570 km | used | €31,652.33 | +€17,979.18 |
+| 31 | 🔄 ⚡ Kia EV6 Long Range RWD | EV | 2024 | 77.4 kWh | 528 km | used | €31,712.10 | +€18,038.95 |
+| 32 | 🔄 ⚡ Tesla Model Y Long Range | EV | 2024 | 75 kWh | 533 km | used | €32,432.64 | +€18,759.49 |
+| 33 | 🔄 ⛽ Skoda Octavia 2.0 TDI | ICE | 2024 | N/A | N/A | used | €32,759.35 | +€19,086.20 |
+| 34 | 🔄 ⚡ Volkswagen ID.7 Pro | EV | 2024 | 77 kWh | 621 km | used | €34,853.03 | +€21,179.88 |
+| 35 | 🔄 ⚡ Volkswagen ID.7 Tourer Pro | EV | 2024 | 77 kWh | 605 km | used | €35,516.13 | +€21,842.98 |
+| 36 | 🔄 🔌 Volvo XC60 T8 Recharge | PHEV | 2020 | 11.6 kWh | 45 km | used | €36,153.45 | +€22,480.30 |
+| 37 | 🔄 ⛽ Toyota RAV4 Hybrid | ICE | 2024 | N/A | N/A | used | €37,991.35 | +€24,318.20 |
+| 38 | 🔄 ⚡ XPeng G9 Long Range | EV | 2024 | 98 kWh | 570 km | used | €38,666.59 | +€24,993.44 |
+| 39 | 🔄 🔌 BMW X5 xDrive45e | PHEV | 2019 | 24 kWh | 87 km | used | €39,716.08 | +€26,042.93 |
+| 40 | 🔄 ⛽ Volkswagen Tiguan 2.0 TDI | ICE | 2024 | N/A | N/A | used | €40,555.16 | +€26,882.01 |
+| 41 | 🔄 ⛽ Mazda CX-60 Diesel | ICE | 2024 | N/A | N/A | used | €41,793.20 | +€28,120.05 |
+| 42 | 🔄 🔌 BMW 330e | PHEV | 2024 | 12 kWh | 54 km | used | €42,165.81 | +€28,492.66 |
+| 43 | 🔄 ⚡ BMW i4 eDrive40 | EV | 2024 | 83.9 kWh | 590 km | used | €42,240.00 | +€28,566.85 |
+| 44 | 🔄 🔌 Toyota RAV4 PHEV | PHEV | 2024 | 18.1 kWh | 75 km | used | €42,542.07 | +€28,868.92 |
+| 45 | 🔄 ⛽ BMW 320d | ICE | 2024 | N/A | N/A | used | €43,069.49 | +€29,396.34 |
+| 46 | 🔄 ⚡ Polestar 4 Long Range Single Motor (Leased) | EV | 2024 | 94 kWh | 620 km | used | €46,634.43 | +€32,961.28 |
+| 47 | 🔄 ⚡ Kia EV9 Earth Long Range | EV | 2024 | 99.8 kWh | 563 km | used | €47,358.48 | +€33,685.32 |
+| 48 | 🔄 ⚡ Volkswagen ID.7 Pro Elegance (Leased) | EV | 2024 | 77 kWh | 621 km | used | €50,424.32 | +€36,751.17 |
+| 49 | 🔄 ⚡ BMW iX xDrive40 | EV | 2024 | 76.6 kWh | 425 km | used | €50,745.92 | +€37,072.77 |
+| 50 | 🔄 🔌 Volvo XC60 T8 Recharge | PHEV | 2024 | 18.8 kWh | 81 km | used | €54,669.79 | +€40,996.64 |
+| 51 | 🔄 ⚡ Volkswagen ID.7 GTX 4MOTION (Leased) | EV | 2024 | 86 kWh | 580 km | used | €55,377.35 | +€41,704.20 |
+| 52 | 🔄 🔌 Mercedes-Benz GLE 350 de | PHEV | 2024 | 31.2 kWh | 106 km | used | €59,581.33 | +€45,908.17 |
+| 53 | 🔄 🔌 Volvo XC90 T8 Recharge | PHEV | 2024 | 18.8 kWh | 71 km | used | €64,823.99 | +€51,150.84 |
 
 ### Net Cost After Resale
 
 | Vehicle | Year | Total Cost | Residual Value | Net Cost |
 |---------|------|------------|----------------|----------|
+| Volkswagen ID.4 Pro | 2021 | €13,673.15 | €16,870.24 | €-3,197.09 |
+| Tesla Model 3 Long Range | 2021 | €15,028.30 | €19,070.71 | €-4,042.41 |
+| Hyundai Ioniq 5 Long Range RWD | 2021 | €15,136.49 | €19,070.71 | €-3,934.22 |
+| Skoda Enyaq iV 80 | 2021 | €15,612.45 | €19,804.20 | €-4,191.74 |
+| Kia EV6 GT-Line | 2021 | €17,790.12 | €22,738.15 | €-4,948.03 |
+| Polestar 2 Long Range Single Motor | 2022 | €17,950.21 | €16,032.85 | €1,917.36 |
 | Toyota Yaris Hybrid | 2019 | €19,156.96 | €12,223.96 | €6,933.00 |
-| Kia EV6 GT-Line | 2021 | €19,840.38 | €25,672.11 | €-5,831.72 |
-| Polestar 2 Long Range | 2020 | €20,245.42 | €25,672.11 | €-5,426.68 |
-| Tesla Model 3 Long Range | 2021 | €21,193.76 | €27,872.57 | €-6,678.81 |
+| Audi e-tron 55 quattro | 2021 | €19,377.70 | €23,471.64 | €-4,093.94 |
+| Kia EV6 Long Range | 2022 | €19,717.23 | €17,882.79 | €1,834.44 |
 | Toyota Corolla Hybrid | 2021 | €22,459.24 | €17,928.47 | €4,530.78 |
 | Kia Niro PHEV | 2019 | €22,531.80 | €17,013.75 | €5,518.05 |
 | Skoda Octavia 2.0 TDI | 2019 | €22,743.33 | €14,668.75 | €8,074.58 |
+| Tesla Model Y Long Range | 2022 | €22,951.88 | €20,966.03 | €1,985.85 |
 | Volkswagen Passat 2.0 TDI | 2018 | €23,387.09 | €13,038.89 | €10,348.21 |
 | Mazda 3 Skyactiv-G | 2019 | €23,490.96 | €13,038.89 | €10,452.08 |
-| Polestar 2 Long Range Dual Motor | 2021 | €23,706.22 | €30,806.53 | €-7,100.31 |
 | Volkswagen Golf 1.5 TSI | 2021 | €24,393.37 | €16,298.61 | €8,094.77 |
-| Kia EV6 Long Range | 2022 | €25,312.92 | €23,432.63 | €1,880.30 |
-| Polestar 2 Long Range Single Motor | 2022 | €25,437.58 | €23,432.63 | €2,004.95 |
+| Volkswagen ID.7 Pro | 2023 | €25,757.19 | €24,049.27 | €1,707.92 |
 | VW Passat GTE | 2021 | €25,907.61 | €21,653.86 | €4,253.75 |
-| Jaguar I-PACE | 2019 | €26,365.92 | €33,006.99 | €-6,641.08 |
-| Volkswagen ID.7 Pro | 2022 | €27,845.72 | €25,899.22 | €1,946.51 |
+| BMW i4 eDrive40 | 2022 | €27,625.94 | €25,282.57 | €2,343.37 |
 | Mitsubishi Outlander PHEV | 2020 | €27,986.64 | €21,653.86 | €6,332.77 |
+| Tesla Model Y RWD | 2024 | €28,836.61 | €27,440.84 | €1,395.77 |
 | BMW 330e | 2021 | €28,872.26 | €27,067.33 | €1,804.93 |
+| Mercedes-Benz EQE 350+ | 2022 | €29,110.53 | €26,515.87 | €2,594.66 |
 | BMW 320d | 2021 | €29,124.74 | €26,077.77 | €3,046.97 |
-| Audi e-tron 55 quattro | 2021 | €29,751.33 | €38,141.42 | €-8,390.09 |
-| Volkswagen ID.4 Pro | 2024 | €31,171.23 | €29,599.11 | €1,572.12 |
-| BMW i4 eDrive40 | 2022 | €32,016.71 | €29,599.11 | €2,417.60 |
+| Volkswagen ID.4 Pro | 2024 | €29,134.84 | €27,749.16 | €1,385.68 |
+| XPeng G9 RWD Long Range | 2023 | €29,477.81 | €27,132.51 | €2,345.30 |
+| Skoda Enyaq 85 | 2024 | €30,995.97 | €29,599.11 | €1,396.87 |
+| BMW iX xDrive40 | 2022 | €31,043.34 | €28,365.81 | €2,677.53 |
+| Hyundai Ioniq 6 Long Range | 2024 | €31,353.94 | €30,215.75 | €1,138.19 |
+| Hyundai Ioniq 5 Long Range RWD | 2024 | €31,652.33 | €30,215.75 | €1,436.57 |
+| Kia EV6 Long Range RWD | 2024 | €31,712.10 | €30,215.75 | €1,496.35 |
+| Tesla Model Y Long Range | 2024 | €32,432.64 | €30,770.74 | €1,661.90 |
 | Skoda Octavia 2.0 TDI | 2024 | €32,759.35 | €24,067.60 | €8,691.75 |
-| Hyundai Ioniq 6 Long Range | 2024 | €33,219.17 | €32,065.70 | €1,153.47 |
-| Kia EV6 Long Range RWD | 2024 | €33,577.33 | €32,065.70 | €1,511.63 |
-| Polestar 2 Long Range Single Motor | 2024 | €34,886.79 | €33,298.99 | €1,587.80 |
-| Tesla Model Y Long Range | 2024 | €35,614.77 | €33,915.64 | €1,699.13 |
+| Volkswagen ID.7 Pro | 2024 | €34,853.03 | €33,298.99 | €1,554.03 |
+| Volkswagen ID.7 Tourer Pro | 2024 | €35,516.13 | €33,915.64 | €1,600.49 |
 | Volvo XC60 T8 Recharge | 2020 | €36,153.45 | €32,480.80 | €3,672.65 |
-| Volkswagen ID.7 Pro | 2024 | €37,344.41 | €35,765.59 | €1,578.82 |
 | Toyota RAV4 Hybrid | 2024 | €37,991.35 | €28,881.12 | €9,110.23 |
-| Porsche Taycan 4S | 2020 | €38,743.17 | €49,877.24 | €-11,134.07 |
+| XPeng G9 Long Range | 2024 | €38,666.59 | €36,382.23 | €2,284.36 |
 | BMW X5 xDrive45e | 2019 | €39,716.08 | €37,120.91 | €2,595.17 |
 | Volkswagen Tiguan 2.0 TDI | 2024 | €40,555.16 | €30,944.06 | €9,611.10 |
 | Mazda CX-60 Diesel | 2024 | €41,793.20 | €33,006.99 | €8,786.21 |
 | BMW 330e | 2024 | €42,165.81 | €33,871.42 | €8,294.39 |
+| BMW i4 eDrive40 | 2024 | €42,240.00 | €40,082.12 | €2,157.87 |
 | Toyota RAV4 PHEV | 2024 | €42,542.07 | €33,871.42 | €8,670.65 |
 | BMW 320d | 2024 | €43,069.49 | €35,757.58 | €7,311.92 |
-| Polestar 4 Long Range Single Motor | 2024 | €44,111.73 | €41,932.07 | €2,179.66 |
-| BMW i4 eDrive40 | 2024 | €44,121.75 | €41,932.07 | €2,189.69 |
 | Polestar 4 Long Range Single Motor (Leased) | 2024 | €46,634.43 | Returned | €46,634.43 |
+| Kia EV9 Earth Long Range | 2024 | €47,358.48 | €44,398.66 | €2,959.82 |
 | Volkswagen ID.7 Pro Elegance (Leased) | 2024 | €50,424.32 | Returned | €50,424.32 |
-| Mercedes-Benz EQE 350 | 2024 | €53,262.27 | €50,565.14 | €2,697.13 |
+| BMW iX xDrive40 | 2024 | €50,745.92 | €48,098.55 | €2,647.38 |
 | Volvo XC60 T8 Recharge | 2024 | €54,669.79 | €44,293.39 | €10,376.40 |
-| BMW iX xDrive40 | 2024 | €55,152.11 | €52,415.08 | €2,737.03 |
 | Volkswagen ID.7 GTX 4MOTION (Leased) | 2024 | €55,377.35 | Returned | €55,377.35 |
 | Mercedes-Benz GLE 350 de | 2024 | €59,581.33 | €50,807.13 | €8,774.20 |
 | Volvo XC90 T8 Recharge | 2024 | €64,823.99 | €53,412.62 | €11,411.37 |
@@ -976,11 +1182,11 @@
 ### Best by Category
 
 **🔄 Best Used Car:**  
-Toyota Yaris Hybrid (2019) - €19,156.96
+Volkswagen ID.4 Pro (2021) - €13,673.15
 
 **By Vehicle Type:**
 
-- ⚡ **Best EV**: Kia EV6 GT-Line (2021) - €19,840.38
+- ⚡ **Best EV**: Volkswagen ID.4 Pro (2021) - €13,673.15
 - 🔌 **Best PHEV**: Kia Niro PHEV (2019) - €22,531.80
 - ⛽ **Best ICE**: Toyota Yaris Hybrid (2019) - €19,156.96
 

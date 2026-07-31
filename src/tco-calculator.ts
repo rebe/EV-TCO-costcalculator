@@ -12,6 +12,13 @@ interface VehicleSpecs {
   condition?: 'new' | 'used';
   realWorldConsumptionFactor?: number;
   leasing?: LeaseConfig;
+  
+  // Optional EV Practicality Specs
+  cargoVolumeLiters?: number;
+  fastChargingKw?: number;
+  batteryPreheating?: boolean;
+  rearLegroomRating?: 'Outstanding' | 'Excellent' | 'Good' | 'Fair';
+  notes?: string;
 }
 
 interface LeaseConfig {
@@ -50,6 +57,7 @@ interface TCOResult {
   averageAnnualCost: number;
   residualValue: number;
   purchasePrice: number;
+  specs?: VehicleSpecs;
 }
 
 interface YearlyBreakdown {
@@ -202,6 +210,7 @@ class EVTCOCalculator {
       averageAnnualCost: totalCost / this.YEARS,
       residualValue,
       purchasePrice: vehicle.purchasePrice,
+      specs: vehicle,
     };
   }
 
@@ -457,12 +466,20 @@ class EVTCOCalculator {
   }
 
   private printVehicleResultConsole(result: TCOResult): void {
-    const isLeased = result.residualValue === 0 && result.year1.depreciation > 0 && result.purchasePrice > 0; // Simple heuristic, or we ideally pass 'isLeased' down
+    const isLeased = result.residualValue === 0 && result.year1.depreciation > 0 && result.purchasePrice > 0;
     const leaseText = isLeased ? ' [📝 LEASED]' : '';
+    const specs = result.specs;
 
     console.log(`\n${'='.repeat(70)}`);
     console.log(`${result.vehicleName} (${result.type}) - ${result.yearModel} Model${leaseText}`);
-    console.log(`Condition: ${result.condition.toUpperCase()} | Current Mileage: ${result.currentMileage.toLocaleString()} km | ${isLeased ? 'List' : 'Purchase'} Price: €${result.purchasePrice.toLocaleString()}`);
+    const batteryText = specs?.batteryCapacity ? ` | Battery: ${specs.batteryCapacity} kWh | Range: ${specs.electricRange} km` : '';
+    console.log(`Condition: ${result.condition.toUpperCase()} | Current Mileage: ${result.currentMileage.toLocaleString()} km${batteryText} | ${isLeased ? 'List' : 'Purchase'} Price: €${result.purchasePrice.toLocaleString()}`);
+    if (specs && (specs.cargoVolumeLiters || specs.fastChargingKw || specs.batteryPreheating !== undefined || specs.rearLegroomRating)) {
+      console.log(`Legroom: ${specs.rearLegroomRating || 'N/A'} | Fast Charge: ${specs.fastChargingKw ? specs.fastChargingKw + ' kW' : 'N/A'} | Pre-heater: ${specs.batteryPreheating ? 'Yes' : 'No'} | Cargo: ${specs.cargoVolumeLiters ? specs.cargoVolumeLiters + 'L' : 'N/A'}`);
+    }
+    if (specs?.notes) {
+      console.log(`Notes: ${specs.notes}`);
+    }
     console.log('='.repeat(70));
 
     console.log('\nYearly Breakdown:');
@@ -495,9 +512,19 @@ class EVTCOCalculator {
     const typeEmoji = result.type === 'EV' ? '⚡' : result.type === 'PHEV' ? '🔌' : '⛽';
     const conditionEmoji = result.condition === 'new' ? '🆕' : '🔄';
     const leaseTag = isLeased ? ' 📝 **[LEASED]**' : '';
+    const specs = result.specs;
 
     console.log(`### ${index}. ${conditionEmoji} ${typeEmoji} ${result.vehicleName} (${result.yearModel})${leaseTag}\n`);
-    console.log(`**Type**: ${result.type} | **Condition**: ${result.condition} | **Mileage**: ${result.currentMileage.toLocaleString()} km | **${isLeased ? 'List' : 'Purchase'} Price**: €${result.purchasePrice.toLocaleString()}\n`);
+    const batteryMarkdown = specs?.batteryCapacity ? ` | **Battery**: ${specs.batteryCapacity} kWh | **Range**: ${specs.electricRange} km` : '';
+    console.log(`**Type**: ${result.type} | **Condition**: ${result.condition} | **Mileage**: ${result.currentMileage.toLocaleString()} km${batteryMarkdown} | **${isLeased ? 'List' : 'Purchase'} Price**: €${result.purchasePrice.toLocaleString()}\n`);
+
+    if (specs && (specs.cargoVolumeLiters || specs.fastChargingKw || specs.batteryPreheating !== undefined || specs.rearLegroomRating)) {
+      console.log(`- 📐 **Practical Specs**: **Legroom**: ${specs.rearLegroomRating || 'N/A'} | **Fast Charge**: ${specs.fastChargingKw ? specs.fastChargingKw + ' kW' : 'N/A'} | **Battery Pre-heater**: ${specs.batteryPreheating ? '✅ Yes' : '❌ No'} | **Cargo**: ${specs.cargoVolumeLiters ? specs.cargoVolumeLiters + 'L' : 'N/A'}`);
+      if (specs.notes) {
+        console.log(`- ℹ️ **Notes**: ${specs.notes}`);
+      }
+      console.log('');
+    }
 
     console.log('| Year | Depreciation | Fuel | Electricity | Insurance | Maintenance | Tax | Financing | **Total** |');
     console.log('|------|--------------|------|-------------|-----------|-------------|-----|-----------|-----------|');
@@ -535,8 +562,9 @@ class EVTCOCalculator {
       const savings = index > 0 ? result.totalCost - results[0].totalCost : 0;
       const emoji = result.condition === 'new' ? '🆕' : '🔄';
       const typeEmoji = result.type === 'EV' ? '⚡' : result.type === 'PHEV' ? '🔌' : '⛽';
+      const batteryStr = result.specs?.batteryCapacity ? ` [${result.specs.batteryCapacity} kWh, ${result.specs.electricRange} km]` : '';
       console.log(
-        `${index + 1}. ${emoji} ${typeEmoji} ${result.vehicleName} (${result.type}, ${result.yearModel}): €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (+€${Math.abs(savings).toFixed(2)} vs best)` : ' ⭐ BEST'}`
+        `${index + 1}. ${emoji} ${typeEmoji} ${result.vehicleName} (${result.type}, ${result.yearModel})${batteryStr}: €${result.totalCost.toFixed(2)}${savings !== 0 ? ` (+€${Math.abs(savings).toFixed(2)} vs best)` : ' ⭐ BEST'}`
       );
     });
 
@@ -588,17 +616,19 @@ class EVTCOCalculator {
     results.sort((a, b) => a.totalCost - b.totalCost);
 
     console.log('### Ranked by Total Cost of Ownership\n');
-    console.log('| Rank | Vehicle | Type | Year | Condition | Total Cost | vs Best |');
-    console.log('|------|---------|------|------|-----------|------------|---------|');
+    console.log('| Rank | Vehicle | Type | Year | Battery | Range | Condition | Total Cost | vs Best |');
+    console.log('|------|---------|------|------|---------|-------|-----------|------------|---------|');
 
     results.forEach((result, index) => {
       const savings = index > 0 ? result.totalCost - results[0].totalCost : 0;
       const emoji = result.condition === 'new' ? '🆕' : '🔄';
       const typeEmoji = result.type === 'EV' ? '⚡' : result.type === 'PHEV' ? '🔌' : '⛽';
       const savingsText = savings !== 0 ? `+€${savings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}` : '⭐ BEST';
+      const batStr = result.specs?.batteryCapacity ? `${result.specs.batteryCapacity} kWh` : 'N/A';
+      const rangeStr = result.specs?.electricRange ? `${result.specs.electricRange} km` : 'N/A';
 
       console.log(
-        `| ${index + 1} | ${emoji} ${typeEmoji} ${result.vehicleName} | ${result.type} | ${result.yearModel} | ${result.condition} | €${result.totalCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} | ${savingsText} |`
+        `| ${index + 1} | ${emoji} ${typeEmoji} ${result.vehicleName} | ${result.type} | ${result.yearModel} | ${batStr} | ${rangeStr} | ${result.condition} | €${result.totalCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} | ${savingsText} |`
       );
     });
 

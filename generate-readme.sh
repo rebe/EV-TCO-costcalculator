@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# 1. Regenerate README.md
+cat > README.md << 'EOF'
 # EV & PHEV Total Cost of Ownership Calculator - Finland
 
 A comprehensive TypeScript-based calculator for comparing the Total Cost of Ownership (TCO) of Electric Vehicles (EVs), Plug-in Hybrid Electric Vehicles (PHEVs), and Internal Combustion Engine (ICE) vehicles in the Finnish market over a 5-year period.
@@ -158,3 +162,11 @@ MIT
 
 ---
 *Made for the Finnish EV community*
+EOF
+
+echo "README.md generated successfully!"
+
+# 2. Regenerate results/COMPARE.md cleanly (without npm log header lines)
+mkdir -p results
+npx ts-node src/example-usage.ts --markdown | sed '/^>/d' > results/COMPARE.md
+echo "results/COMPARE.md generated successfully!"
